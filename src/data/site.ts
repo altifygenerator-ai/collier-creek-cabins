@@ -1,4 +1,4 @@
-export const siteInfo = {
+﻿export const siteInfo = {
   name: "Collier Creek Cabins & Wedding Barn",
   shortName: "Collier Creek",
   eyebrow: "Creekside cabins in Norman, Arkansas",
@@ -8,13 +8,12 @@ export const siteInfo = {
   secondaryPhone: "318-393-2551",
   email: "sspmcguire@aol.com",
   hours: "9am - 5pm",
-  facebookProof: "Recommended by guests for peaceful creek stays, family trips, and relaxing weekends.",
+  facebookProof:
+    "Recommended by guests for peaceful creek stays, family trips, clear water, and relaxing weekends.",
   minimumStay: "2 night minimum. 3 night minimum on holidays.",
-  heroTitle: "A peaceful creekside place to stay, gather, and slow down.",
-  heroText:
-    "Three cabins, a wedding barn, and five private acres beside clear Collier Creek. Guests come for the water, the porches, the shade trees, the privacy, and the easy feeling of being tucked away near Norman and Caddo Gap.",
-  highlightLine:
-    "Three creekside cabins, clear water, covered porches, private outdoor space, and a wedding barn in one quiet Arkansas setting.",
+  heroTitle: "A quiet creekside stay in Norman, Arkansas",
+  heroText: "Three cabins, a rustic wedding barn, and five private acres tucked along Collier Creek. Spend the day in the water, relax on the covered porch, grill outside, watch the kids explore, and settle into the kind of simple Arkansas getaway people come back for.",
+  highlightLine: "Clear creek water, covered porches, dog friendly stays, private acreage, and a wedding barn in one peaceful Arkansas setting.",
   weddingNote: "Weddings book all three cabins inclusive.",
 };
 
@@ -28,24 +27,31 @@ export const navLinks = [
 ];
 
 export const images = {
-  hero: "/images/professional/collier-creek-detail.jpg",
-  creekHero: "/images/hero/cabin-hero.png",
+  hero: "/images/showcase/rec-3635.jpg",
+  heroAlt: "/images/showcase/creek-1.jpg",
+  heroDetail: "/images/showcase/rec-2992.jpg",
+  creek: "/images/showcase/rec-3587.jpg",
+  creekTwo: "/images/showcase/creek-1.jpg",
+  cabinExterior: "/images/showcase/cabins-creek.jpg",
+  cabinDoor: "/images/showcase/rec-2930.jpg",
+  cabinInterior: "/images/showcase/rec-2995.jpg",
+  cabinDetail: "/images/showcase/rec-3173.jpg",
+  sign: "/images/showcase/collier-creek-sign.jpg",
+  loveCabin: "/images/showcase/rec-2992.jpg",
+  fish: "/images/showcase/rec-2954.jpg",
+  grill: "/images/showcase/grill-1.jpg",
+  signs: "/images/showcase/signs.jpg",
+  weddingBarn: "/images/showcase/rec-3710.jpg",
+  weddingBarnDay: "/images/showcase/rec-3635.jpg",
+  weddingDetail: "/images/showcase/rec-3852.jpg",
+  mcguire: "/images/showcase/rec-4255.jpg",
 
-  collier: "/images/cabins/collier-creek-cabin.png",
+  collier: "/images/showcase/collier-cabin.jpg",
   collierTwo: "/images/cabins/collier-creek-cabin-2.png",
-
-  liberty: "/images/cabins/liberty-cabin.png",
+  liberty: "/images/showcase/liberty-cabin.jpg",
   libertyTwo: "/images/cabins/liberty-cabin-2.png",
-
-  caddo: "/images/cabins/caddo-cabin.png",
+  caddo: "/images/showcase/caddo-cabin.jpg",
   caddoTwo: "/images/cabins/caddo-cabin-2.png",
-
-  creek: "/images/gallery/creek-1.jpg",
-  grill: "/images/gallery/grill-1.jpg",
-  signs: "/images/gallery/signs.jpg",
-  sign: "/images/gallery/collier-creek-sign.jpg",
-
-  weddingBarn: "/images/weddings/wedding-barn.jpg",
 };
 
 export const propertyStats = [
@@ -63,7 +69,7 @@ export const cabins = [
     size: "1276 square feet including the loft",
     sleeps: "Sleeps 7",
     description:
-      "Collier Cabin gives guests room to settle in with a master bedroom, loft, full kitchen, living room, dining area, covered deck, and space for seven guests.",
+      "Collier Cabin gives guests the most room to spread out, with a master bedroom, loft, full kitchen, living room, dining area, covered deck, and space for seven guests.",
     details: [
       "Master bedroom with loft",
       "Full kitchen",
@@ -72,7 +78,7 @@ export const cabins = [
       "Sleeps 7",
     ],
     image: images.collier,
-    imageTwo: images.collierTwo,
+    imageTwo: images.cabinInterior,
     bookUrl: "https://abnb.me/WptVShUqO8",
   },
   {
@@ -90,7 +96,7 @@ export const cabins = [
       "Sleeps five comfortably",
     ],
     image: images.liberty,
-    imageTwo: images.libertyTwo,
+    imageTwo: images.loveCabin,
     bookUrl: "https://abnb.me/M36FF00qO8",
   },
   {
@@ -108,30 +114,8 @@ export const cabins = [
       "Creekside setting",
     ],
     image: images.caddo,
-    imageTwo: images.caddoTwo,
+    imageTwo: images.creekTwo,
     bookUrl: "https://abnb.me/wbVX6Lq8Ifb",
-  },
-];
-
-
-export const videos = [
-  {
-    title: "Around Collier Creek Cabins",
-    text: "A closer look at the cabins, trees, decks, creek, and outdoor space around the property.",
-    src: "/videos/collier-creek-video-1.mp4",
-    poster: images.creekHero,
-  },
-  {
-    title: "Clear Creek and Grounds",
-    text: "See the creek, the wooded setting, and the kind of outdoor space guests come here to enjoy.",
-    src: "/videos/collier-creek-video-2.mp4",
-    poster: images.creek,
-  },
-  {
-    title: "Wedding Barn and Events",
-    text: "A look at the wedding barn, cabins, and outdoor gathering space for special events.",
-    src: "/videos/collier-creek-video-3.mp4",
-    poster: images.weddingBarn,
   },
 ];
 
@@ -170,77 +154,71 @@ export const nearbyNotes = [
 
 export const galleryImages = [
   {
-    src: images.hero,
-    title: "A warm welcome",
-    text: "Professional photos show the sunlight, textures, and easy outdoor feel around Collier Creek.",
-  },
-  {
-    src: images.creekHero,
-    title: "Cabins by the creek",
-    text: "Three cabins sit close to porches, grills, shade trees, and the water.",
-  },
-  {
-    src: images.collier,
-    title: "Collier Cabin",
-    text: "The largest cabin, with a master bedroom, loft, full kitchen, and space for seven.",
-  },
-  {
-    src: images.liberty,
-    title: "Liberty Cabin",
-    text: "A comfortable studio cabin with a full kitchen, covered deck, picnic table, and grills.",
-  },
-  {
-    src: images.caddo,
-    title: "Caddo Cabin",
-    text: "A relaxed studio cabin close to the quiet creek setting.",
+    src: images.weddingBarnDay,
+    title: "Wedding barn setting",
+    text: "A rustic barn setting surrounded by trees, cabins, and outdoor space.",
   },
   {
     src: images.creek,
     title: "Clear Collier Creek",
-    text: "Guests can swim, snorkel, soak, fish, explore, or simply sit by the water.",
+    text: "Shallow clear water, rock banks, shade, and room to explore.",
+  },
+  {
+    src: images.cabinInterior,
+    title: "Warm cabin interiors",
+    text: "Comfortable spaces that feel relaxed, practical, and easy to settle into.",
+  },
+  {
+    src: images.cabinDoor,
+    title: "Cabin details",
+    text: "Rustic touches, wood textures, and the kind of small details guests remember.",
+  },
+  {
+    src: images.weddingDetail,
+    title: "Gathering space",
+    text: "Simple, beautiful spaces for weddings, photos, and family weekends.",
+  },
+  {
+    src: images.fish,
+    title: "Creek days",
+    text: "Guests fish, splash, look for crystals, and enjoy the creek at their own pace.",
   },
   {
     src: images.grill,
     title: "Outdoor meals",
-    text: "Covered porches, picnic tables, grills, and room to gather outside.",
+    text: "Picnic tables, grills, porches, and quiet evenings outside.",
   },
   {
-    src: images.weddingBarn,
-    title: "Wedding barn",
-    text: "A rustic event space paired with cabins and creekside scenery.",
+    src: images.signs,
+    title: "Tucked away feel",
+    text: "A private creekside property with character, shade, and room to roam.",
   },
 ];
 
 export const photoBreaks = [
   {
-    src: images.creekHero,
-    eyebrow: "The property",
-    title: "Cabins, porches, trees, and creek water all in one place.",
-    text: "Collier Creek is set up for slow mornings, outdoor meals, creek time, and quiet evenings with the cabins close together on the same private property.",
-  },
-  {
-    src: images.creek,
-    eyebrow: "Collier Creek",
-    title: "Clear water for swimming, soaking, fishing, and exploring.",
-    text: "Walk down to the creek, look for fish under the slate rock banks, bring water shoes, and enjoy the kind of setting guests remember after they leave.",
+    src: images.creekTwo,
+    eyebrow: "The creek",
+    title: "Clear water, shade trees, and a slower kind of weekend.",
+    text: "Walk down to the creek, sit under the trees, let the kids explore, or spend the evening listening to the water below the porch.",
   },
   {
     src: images.weddingBarn,
-    eyebrow: "Wedding Barn",
+    eyebrow: "Wedding barn",
     title: "A rustic event setting with cabins close by.",
-    text: "For weddings and special events, guests can enjoy the barn, the cabins, the creek, and the outdoor gathering space without needing to leave the property.",
+    text: "For weddings and special events, the barn, cabins, creek, and outdoor space are all part of one easy property experience.",
   },
 ];
 
 export const reviews = [
   {
     name: "Amanda Allbritton",
-    text: "This place is the perfect vacation spot for all ages. We had an amazing time and can’t wait to go back.",
+    text: "This place is the perfect vacation spot for all ages. We had an amazing time and canâ€™t wait to go back.",
   },
   {
     name: "Candace Mendoza",
     text: "Our checklist included dog friendly, a covered outdoor sitting area, no more than 20 minutes from town, and as close to the water as possible. The porch is beautiful, large, covered, and has a gate.",
-    note: "Spacious rooms • Thoughtful amenities",
+    note: "Spacious rooms â€¢ Thoughtful amenities",
   },
   {
     name: "John Gregory Basco",
@@ -256,11 +234,11 @@ export const reviews = [
   },
   {
     name: "Laurie Richardson McCullough",
-    text: "I love this place! The kids are loving it, too. It’s just beautiful and peaceful here.",
+    text: "I love this place! The kids are loving it, too. Itâ€™s just beautiful and peaceful here.",
   },
   {
     name: "Carla O'Bier",
-    text: "It’s a wonderful and very relaxing place to stay! We will definitely visit again!",
+    text: "Itâ€™s a wonderful and very relaxing place to stay! We will definitely visit again!",
   },
   {
     name: "Cynthia Malone",
@@ -271,11 +249,29 @@ export const reviews = [
     text: "A quiet getaway. It was so relaxing and peaceful sitting on the back deck and listening to the flow of the water in the creek below.",
   },
   {
-    name: "Bailey Sharp",
-    text: "Beautiful view! Lots of privacy! Perfect for vacations! 5 stars.",
-  },
-  {
     name: "George-Antionette Fauber",
     text: "What a great place to get away from the city! Convenient location, great facility, lots of nature and plenty of scenery. Fun exploring the creek. Cool, clear water!",
   },
 ];
+
+export const videos = [
+  {
+    title: "Around Collier Creek Cabins",
+    text: "A closer look at the cabins, trees, decks, creek, and outdoor space around the property.",
+    src: "/videos/collier-creek-video-1.mp4",
+    poster: images.hero,
+  },
+  {
+    title: "Clear Creek and Grounds",
+    text: "See the creek, the wooded setting, and the kind of outdoor space guests come here to enjoy.",
+    src: "/videos/collier-creek-video-2.mp4",
+    poster: images.creek,
+  },
+  {
+    title: "Wedding Barn and Events",
+    text: "A look at the wedding barn, cabins, and outdoor gathering space for special events.",
+    src: "/videos/collier-creek-video-3.mp4",
+    poster: images.weddingBarn,
+  },
+];
+

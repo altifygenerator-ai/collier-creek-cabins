@@ -20,13 +20,10 @@ export default function Footer() {
           ))}
         </nav>
 
-        <div>
-          <p>{siteInfo.address}</p>
-          <p>
-            {siteInfo.phone} or {siteInfo.secondaryPhone}
-          </p>
-          <p>{siteInfo.hours}</p>
-        </div>
+        <p>
+          {siteInfo.address}<br />
+          {siteInfo.phone} · {siteInfo.email}
+        </p>
       </div>
     </footer>
   );

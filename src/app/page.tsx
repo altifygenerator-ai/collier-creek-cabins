@@ -22,13 +22,14 @@ export default function Home() {
         <PropertyStats />
         <PropertyIntro />
         <CabinSelector />
-        <ImageBreak index={1} />
+        <ImageBreak index={0} />
         <CreekExperience />
         <PhotoMosaic />
         <WeddingWeekend />
         <Amenities />
         <Reviews />
         <NearbyArea />
+        <ImageBreak index={1} />
         <FinalCTA />
       </main>
       <Footer />
