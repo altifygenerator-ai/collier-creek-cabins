@@ -1,4 +1,4 @@
-﻿import { nearbyNotes } from "@/data/site";
+import { nearbyNotes } from "@/data/site";
 import Reveal from "@/components/Reveal";
 
 export default function NearbyArea() {
@@ -6,12 +6,12 @@ export default function NearbyArea() {
     <section className="nearby-section section-pad">
       <div className="container nearby-grid">
         <Reveal className="section-heading">
-          <p className="eyebrow">Caddo Gap area</p>
-          <h2>Natural mineral springs, diamond and crystal area for digging.</h2>
+          <p className="eyebrow">Norman & Caddo Gap</p>
+          <h2>Creek country, mineral springs, crystals, and quiet Arkansas scenery.</h2>
           <p>
-            Caddo Gap is known for its unique energy, the proximity of natural
-            mineral springs, and diamond and crystal areas for digging. This
-            makes the whole area special.
+            Collier Creek is near Norman and Caddo Gap, with natural mineral
+            springs, diamond and crystal digging areas, Caddo River Beach, and
+            wooded scenery nearby.
           </p>
         </Reveal>
 

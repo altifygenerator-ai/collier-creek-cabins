@@ -1,36 +1,32 @@
-﻿:root {
+:root {
   --wood-white: url("/images/backgrounds/white-washed-wood.png");
   --wood-rustic: url("/images/backgrounds/rustic-wood.png");
   --wood-warm: url("/images/backgrounds/warm-wood.png");
+  --hero-photo: url("/images/professional/collier-creek-detail.jpg");
 
   --black: #0d0906;
   --char: #17100b;
-  --dark-brown: #24150d;
+  --dark: #24150d;
   --walnut: #3b2113;
-  --bark: #4c2a17;
   --cedar: #7f4828;
   --cedar-light: #b87949;
-
   --brass-dark: #765421;
   --brass: #a97d36;
   --brass-light: #d8b466;
-
   --cream: #f6ebd2;
   --paper: #fff7e8;
   --old-paper: #ead5ad;
-  --whitewash: #f8f4ea;
+  --ink: #211207;
+  --muted: #5d4029;
 
-  --muted: #705f4e;
-  --border: rgba(36, 21, 13, 0.16);
-
-  --shadow-soft: 0 18px 42px rgba(13, 9, 6, 0.12);
-  --shadow-wood: 0 28px 78px rgba(13, 9, 6, 0.24);
-  --shadow-dark: 0 32px 96px rgba(0, 0, 0, 0.46);
+  --shadow-soft: 0 16px 38px rgba(13, 9, 6, 0.11);
+  --shadow-wood: 0 28px 78px rgba(13, 9, 6, 0.22);
+  --shadow-dark: 0 30px 90px rgba(0, 0, 0, 0.42);
 
   --container: 1160px;
-  --curve-a: 34px 10px 34px 10px;
-  --curve-b: 10px 34px 10px 34px;
-  --curve-soft: 26px;
+  --curve-a: 30px 10px 30px 10px;
+  --curve-b: 10px 30px 10px 30px;
+  --curve-soft: 24px;
 }
 
 * {
@@ -43,11 +39,11 @@ html {
 
 body {
   margin: 0;
-  color: var(--char);
+  color: var(--ink);
   font-family: var(--font-body), system-ui, sans-serif;
-  background-color: #d7b27b;
+  background-color: #d9b071;
   background-image:
-    linear-gradient(rgba(246, 235, 210, 0.32), rgba(234, 213, 173, 0.42)),
+    linear-gradient(rgba(246, 235, 210, 0.18), rgba(234, 213, 173, 0.26)),
     var(--wood-warm);
   background-size: cover, cover;
   background-position: center, center;
@@ -61,9 +57,9 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(circle at 12% 4%, rgba(255, 255, 255, 0.24), transparent 26rem),
-    radial-gradient(circle at 88% 10%, rgba(36, 21, 13, 0.15), transparent 30rem),
-    radial-gradient(circle at 50% 105%, rgba(36, 21, 13, 0.14), transparent 36rem);
+    radial-gradient(circle at 12% 4%, rgba(255, 255, 255, 0.18), transparent 28rem),
+    radial-gradient(circle at 88% 10%, rgba(36, 21, 13, 0.12), transparent 30rem),
+    radial-gradient(circle at 50% 105%, rgba(36, 21, 13, 0.12), transparent 36rem);
 }
 
 a {
@@ -89,7 +85,7 @@ textarea {
 }
 
 .section-pad {
-  padding: 104px 0;
+  padding: 96px 0;
 }
 
 h1,
@@ -98,38 +94,38 @@ h3 {
   margin: 0;
   font-family: var(--font-display), cursive;
   font-weight: 400;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
 h1 {
-  font-size: clamp(4.35rem, 8.8vw, 9.5rem);
-  line-height: 0.86;
-}
-
-h2 {
-  font-size: clamp(3.2rem, 6.3vw, 6.7rem);
+  font-size: clamp(4rem, 7.4vw, 8rem);
   line-height: 0.88;
 }
 
+h2 {
+  font-size: clamp(3rem, 5.4vw, 5.9rem);
+  line-height: 0.9;
+}
+
 h3 {
-  font-size: clamp(2.25rem, 4vw, 4.1rem);
-  line-height: 0.92;
+  font-size: clamp(2.15rem, 3.4vw, 3.8rem);
+  line-height: 0.94;
 }
 
 p {
-  line-height: 1.72;
+  line-height: 1.75;
 }
 
 .eyebrow,
 .hero-kicker {
   margin: 0 0 14px;
-  color: var(--brass-dark);
+  color: #573018;
   font-family: var(--font-body), system-ui, sans-serif;
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   text-transform: uppercase;
-  letter-spacing: 0.24em;
-  font-weight: 800;
+  letter-spacing: 0.23em;
+  font-weight: 900;
 }
 
 .btn {
@@ -141,11 +137,8 @@ p {
   border-radius: 999px;
   border: 1px solid transparent;
   font-family: var(--font-body), system-ui, sans-serif;
-  font-weight: 800;
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    background 180ms ease;
+  font-weight: 900;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
 .btn:hover {
@@ -159,7 +152,7 @@ p {
   background: linear-gradient(180deg, var(--brass-light), var(--brass));
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.42),
-    0 16px 34px rgba(36, 21, 13, 0.24);
+    0 16px 34px rgba(36, 21, 13, 0.22);
 }
 
 .btn-secondary {
@@ -171,7 +164,7 @@ p {
 .btn-ghost.light {
   color: var(--paper);
   border-color: rgba(255, 247, 232, 0.34);
-  background: rgba(255, 247, 232, 0.08);
+  background: rgba(255, 247, 232, 0.1);
 }
 
 /* Header */
@@ -181,24 +174,24 @@ p {
   top: 18px;
   left: 50%;
   z-index: 60;
-  width: min(1180px, calc(100% - 32px));
-  min-height: 72px;
+  width: min(1080px, calc(100% - 32px));
+  min-height: 68px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 22px;
-  padding: 12px;
+  gap: 18px;
+  padding: 10px;
   transform: translateX(-50%);
   color: var(--paper);
   border-radius: 999px;
-  border: 1px solid rgba(255, 247, 232, 0.2);
+  border: 1px solid rgba(255, 247, 232, 0.18);
   background-color: var(--char);
   background-image:
-    linear-gradient(rgba(23, 16, 11, 0.78), rgba(23, 16, 11, 0.82)),
+    linear-gradient(rgba(23, 16, 11, 0.72), rgba(23, 16, 11, 0.82)),
     var(--wood-rustic);
   background-size: cover, cover;
   background-position: center, center;
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(16px);
   box-shadow: var(--shadow-dark);
 }
 
@@ -209,15 +202,15 @@ p {
 }
 
 .brand-mark {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
   border-radius: 50%;
   color: var(--black);
   background: linear-gradient(180deg, var(--brass-light), var(--brass-dark));
   font-family: var(--font-display), cursive;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
 .brand strong,
@@ -233,7 +226,7 @@ p {
 
 .brand small {
   margin-top: 3px;
-  color: rgba(255, 247, 232, 0.68);
+  color: rgba(255, 247, 232, 0.75);
   font-size: 0.78rem;
   font-weight: 700;
 }
@@ -242,17 +235,17 @@ p {
   display: flex;
   align-items: center;
   gap: 4px;
-  padding: 6px;
+  padding: 5px;
   border-radius: 999px;
   background: rgba(255, 247, 232, 0.08);
 }
 
 .desktop-nav a {
-  padding: 10px 14px;
+  padding: 9px 13px;
   border-radius: 999px;
-  color: rgba(255, 247, 232, 0.76);
-  font-size: 0.92rem;
-  font-weight: 700;
+  color: rgba(255, 247, 232, 0.8);
+  font-size: 0.9rem;
+  font-weight: 800;
 }
 
 .desktop-nav a:hover {
@@ -261,8 +254,9 @@ p {
 }
 
 .header-call {
-  padding: 13px 18px;
+  padding: 12px 17px;
   border-radius: 999px;
+  font-weight: 900;
 }
 
 /* Hero */
@@ -281,15 +275,11 @@ p {
   position: absolute;
   inset: 0;
   z-index: 0;
-}
-
-.hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: saturate(1.08) contrast(1.08) sepia(0.04);
+  background-image: var(--hero-photo);
+  background-size: cover;
+  background-position: center;
   transform: scale(1.02);
+  filter: saturate(1.05) contrast(1.02) sepia(0.05);
 }
 
 .hero-overlay {
@@ -297,8 +287,8 @@ p {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(13, 9, 6, 0.04) 0%, rgba(13, 9, 6, 0.16) 42%, rgba(13, 9, 6, 0.78) 100%),
-    linear-gradient(180deg, rgba(13, 9, 6, 0.52) 0%, rgba(13, 9, 6, 0.08) 42%, rgba(13, 9, 6, 0.72) 100%);
+    linear-gradient(90deg, rgba(13, 9, 6, 0.78) 0%, rgba(13, 9, 6, 0.42) 48%, rgba(13, 9, 6, 0.08) 100%),
+    linear-gradient(180deg, rgba(13, 9, 6, 0.42) 0%, rgba(13, 9, 6, 0.08) 44%, rgba(13, 9, 6, 0.55) 100%);
 }
 
 .hero-inner {
@@ -306,61 +296,42 @@ p {
   z-index: 2;
   min-height: 100vh;
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(420px, 0.68fr);
-  gap: 44px;
   align-items: center;
-  padding-top: 138px;
-  padding-bottom: 92px;
-}
-
-.hero-empty {
-  min-height: 420px;
+  padding-top: 132px;
+  padding-bottom: 96px;
 }
 
 .hero-panel {
-  position: relative;
-  padding: clamp(28px, 4vw, 54px);
+  width: min(720px, 100%);
+  padding: clamp(28px, 4vw, 52px);
   color: var(--paper);
   border-radius: var(--curve-a);
-  border: 1px solid rgba(255, 247, 232, 0.22);
-  background-color: var(--char);
-  background-image:
-    linear-gradient(rgba(36, 21, 13, 0.72), rgba(13, 9, 6, 0.74)),
+  border: 1px solid rgba(255, 247, 232, 0.18);
+  background:
+    linear-gradient(rgba(36, 21, 13, 0.62), rgba(13, 9, 6, 0.7)),
     var(--wood-rustic);
   background-size: cover, cover;
   background-position: center, center;
-  backdrop-filter: blur(14px);
   box-shadow: var(--shadow-dark);
-}
-
-.hero-panel::before {
-  content: "";
-  position: absolute;
-  left: 28px;
-  right: 28px;
-  top: 18px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(223, 189, 119, 0.95), rgba(181, 118, 63, 0.75), transparent);
 }
 
 .hero-kicker {
   color: var(--brass-light);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.34);
 }
 
 .hero-panel h1 {
-  max-width: 710px;
   color: var(--paper);
-  line-height: 0.83;
-  text-shadow:
-    0 5px 24px rgba(0, 0, 0, 0.5),
-    0 1px 0 rgba(0, 0, 0, 0.45);
+  max-width: 690px;
+  text-shadow: 0 12px 36px rgba(0, 0, 0, 0.42);
 }
 
-.hero-panel .hero-text {
+.hero-text {
   max-width: 610px;
-  margin-top: 26px;
-  color: rgba(255, 247, 232, 0.82);
-  font-size: clamp(1.02rem, 1.45vw, 1.22rem);
+  margin: 24px 0 0;
+  color: rgba(255, 247, 232, 0.94);
+  font-size: clamp(1.03rem, 1.35vw, 1.18rem);
+  font-weight: 600;
 }
 
 .hero-actions {
@@ -370,103 +341,64 @@ p {
   margin-top: 30px;
 }
 
-.hero-proof {
-  margin-top: 34px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  overflow: hidden;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 247, 232, 0.14);
-  background: rgba(13, 9, 6, 0.36);
-}
-
-.hero-proof div {
-  padding: 15px 18px;
-  border-right: 1px solid rgba(255, 247, 232, 0.1);
-}
-
-.hero-proof div:last-child {
-  border-right: 0;
-}
-
-.hero-proof span {
-  display: block;
-  margin-bottom: 6px;
-  color: rgba(255, 247, 232, 0.52);
-  font-family: var(--font-body), system-ui, sans-serif;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-weight: 700;
-}
-
-.hero-proof strong {
-  display: block;
-  color: var(--paper);
-  line-height: 1.12;
-}
-
-/* Property ribbon */
+/* Highlights */
 
 .property-ribbon-section {
   position: relative;
   z-index: 5;
-  margin-top: -36px;
-  padding-bottom: 54px;
+  margin-top: -34px;
+  padding-bottom: 56px;
 }
 
 .property-ribbon {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 14px;
-  border-radius: 26px;
-  border: 1px solid rgba(36, 21, 13, 0.16);
-  background-color: var(--old-paper);
-  background-image:
-    linear-gradient(rgba(255, 247, 232, 0.58), rgba(234, 213, 173, 0.64)),
-    var(--wood-white);
+  gap: 14px;
+  padding: 12px;
+  border-radius: 24px;
+  border: 1px solid rgba(36, 21, 13, 0.14);
+  background:
+    linear-gradient(rgba(255, 247, 232, 0.4), rgba(214, 166, 98, 0.38)),
+    var(--wood-warm);
   background-size: cover, cover;
   background-position: center, center;
   box-shadow: var(--shadow-wood);
-  backdrop-filter: blur(16px);
 }
 
 .ribbon-lead {
-  flex: 0 0 auto;
-  min-width: 280px;
-  padding: 16px 20px;
+  flex: 0 0 360px;
+  padding: 16px 18px;
   color: var(--paper);
   border-radius: 18px;
-  background-color: var(--char);
-  background-image:
-    linear-gradient(rgba(36, 21, 13, 0.78), rgba(13, 9, 6, 0.82)),
+  background:
+    linear-gradient(rgba(36, 21, 13, 0.75), rgba(13, 9, 6, 0.82)),
     var(--wood-rustic);
   background-size: cover, cover;
-  background-position: center, center;
 }
 
 .ribbon-lead span {
   display: block;
   margin-bottom: 7px;
   color: var(--brass-light);
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .ribbon-lead strong {
   display: block;
+  color: var(--paper);
   font-family: var(--font-body), system-ui, sans-serif;
   font-size: 0.9rem;
-  line-height: 1.35;
+  line-height: 1.42;
 }
 
 .ribbon-items {
   flex: 1;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 8px;
 }
 
@@ -474,25 +406,30 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: auto;
-  padding: 11px 12px;
+  padding: 11px 13px;
   border-radius: 999px;
-  color: var(--walnut);
-  background: rgba(59, 33, 19, 0.09);
+  color: #1b0f08;
+  background: rgba(255, 247, 232, 0.4);
+  border: 1px solid rgba(59, 33, 19, 0.09);
   font-size: 0.9rem;
-  font-weight: 800;
-  text-align: center;
+  font-weight: 900;
 }
 
-/* Section headings */
+/* Shared headings */
 
 .section-heading {
-  max-width: 760px;
+  max-width: 780px;
+}
+
+.section-heading h2 {
+  color: #1b0f08;
+  text-shadow: 0 1px 0 rgba(255, 247, 232, 0.68);
 }
 
 .section-heading p {
-  color: var(--muted);
-  font-size: 1.04rem;
+  color: #2b180d;
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
 .section-heading.centered {
@@ -503,76 +440,75 @@ p {
 .split-heading {
   max-width: none;
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.55fr);
-  gap: 40px;
+  grid-template-columns: minmax(0, 0.92fr) minmax(300px, 0.58fr);
+  gap: 38px;
   align-items: end;
 }
 
-.section-heading h2,
-.feature-card h3 {
-  color: var(--walnut);
+.split-heading > p {
+  margin: 0;
+  padding: 18px;
+  color: #2b180d;
+  background: rgba(255, 247, 232, 0.32);
+  border: 1px solid rgba(59, 33, 19, 0.08);
+  border-radius: 22px;
 }
 
-/* Shared section backgrounds */
+/* Section rhythm */
 
-.intro-section,
-.photo-mosaic-section,
-.cabins-section,
-.amenities-section,
-.nearby-section,
-.final-cta {
-  position: relative;
-  overflow: hidden;
-  background-color: var(--cream);
-  background-image:
-    linear-gradient(rgba(255, 247, 232, 0.48), rgba(234, 213, 173, 0.58)),
-    var(--wood-white);
-  background-size: cover, cover;
-  background-position: center, center;
-  background-repeat: no-repeat;
+.intro-section {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(255, 247, 232, 0.45), transparent 30rem),
+    linear-gradient(180deg, #f0d8ac 0%, #d8aa70 100%);
+  box-shadow: inset 0 -42px 80px rgba(59, 33, 19, 0.07);
 }
 
+.cabins-section {
+  background:
+    radial-gradient(circle at 15% 8%, rgba(255, 247, 232, 0.5), transparent 32rem),
+    radial-gradient(circle at 85% 15%, rgba(117, 74, 38, 0.12), transparent 30rem),
+    linear-gradient(180deg, #f4e4c2 0%, #e8c994 48%, #f3e2c0 100%);
+}
+
+.creek-section,
 .video-reel-section,
+.final-cta {
+  color: var(--paper);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(216, 180, 102, 0.14), transparent 32rem),
+    radial-gradient(circle at 80% 100%, rgba(122, 72, 36, 0.16), transparent 34rem),
+    linear-gradient(135deg, #24150d 0%, #120a06 58%, #3b2113 100%);
+}
+
 .wedding-section {
-  position: relative;
-  overflow: hidden;
-  background-color: var(--old-paper);
-  background-image:
-    linear-gradient(rgba(234, 213, 173, 0.44), rgba(202, 161, 112, 0.5)),
+  background:
+    radial-gradient(circle at 80% 10%, rgba(91, 48, 24, 0.13), transparent 28rem),
+    radial-gradient(circle at 20% 100%, rgba(255, 247, 232, 0.3), transparent 32rem),
+    linear-gradient(180deg, #e5c28a 0%, #c99a62 52%, #ead4aa 100%);
+}
+
+.photo-mosaic-section {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.22), transparent 24rem),
+    linear-gradient(rgba(255, 247, 232, 0.42), rgba(234, 213, 173, 0.5)),
+    var(--wood-white);
+  background-size: auto, cover, cover;
+  background-position: center, center, center;
+}
+
+.amenities-section {
+  background:
+    linear-gradient(rgba(241, 211, 160, 0.33), rgba(176, 113, 59, 0.26)),
     var(--wood-warm);
   background-size: cover, cover;
   background-position: center, center;
-  background-repeat: no-repeat;
 }
 
-.intro-section::after,
-.photo-mosaic-section::after,
-.cabins-section::after,
-.amenities-section::after,
-.nearby-section::after,
-.final-cta::after,
-.video-reel-section::after,
-.wedding-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+.nearby-section {
   background:
-    radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.22), transparent 24rem),
-    radial-gradient(circle at 90% 10%, rgba(36, 21, 13, 0.11), transparent 30rem),
-    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(36,21,13,0.04));
-}
-
-.intro-section > .container,
-.photo-mosaic-section > .container,
-.cabins-section > .container,
-.amenities-section > .container,
-.nearby-section > .container,
-.final-cta > .container,
-.video-reel-section > .container,
-.wedding-section > .container {
-  position: relative;
-  z-index: 1;
+    radial-gradient(circle at 20% 0%, rgba(255, 247, 232, 0.54), transparent 30rem),
+    radial-gradient(circle at 80% 75%, rgba(91, 48, 24, 0.12), transparent 30rem),
+    linear-gradient(180deg, #f5e5c6 0%, #e8cb98 100%);
 }
 
 /* Intro */
@@ -580,134 +516,89 @@ p {
 .intro-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
-  gap: 52px;
+  gap: 50px;
   align-items: start;
+}
+
+.intro-heading-card {
+  padding: clamp(20px, 3vw, 32px);
+  border-radius: var(--curve-a);
+  background: rgba(255, 247, 232, 0.3);
+  border: 1px solid rgba(59, 33, 19, 0.08);
+  box-shadow: var(--shadow-soft);
 }
 
 .intro-card-grid {
   display: grid;
-  gap: 0;
+  gap: 14px;
 }
 
 .feature-card {
-  padding: 26px 0 26px 34px;
-  border-left: 2px solid rgba(173, 132, 63, 0.7);
-  background: transparent;
+  padding: 24px 26px;
+  border-radius: var(--curve-b);
+  background:
+    linear-gradient(rgba(255, 247, 232, 0.68), rgba(234, 213, 173, 0.6)),
+    var(--wood-white);
+  background-size: cover, cover;
+  border: 1px solid rgba(59, 33, 19, 0.1);
+  box-shadow: var(--shadow-soft);
 }
 
 .feature-card span {
   display: none;
 }
 
+.feature-card h3 {
+  color: #1b0f08;
+}
+
 .feature-card p {
   max-width: 560px;
-  color: var(--muted);
+  color: #2b180d;
+  font-weight: 600;
 }
 
-/* Photo mosaic */
-
-.photo-mosaic {
-  margin-top: 38px;
-  display: grid;
-  grid-template-columns: 1.05fr 0.78fr 0.86fr;
-  grid-auto-rows: 315px;
-  gap: 18px;
-}
-
-.mosaic-card {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-  isolation: isolate;
-  border-radius: var(--curve-a);
-  background: var(--char);
-  box-shadow: var(--shadow-wood);
-}
-
-.mosaic-card:nth-child(even) {
-  border-radius: var(--curve-b);
-}
-
-.mosaic-card-1 {
-  grid-row: span 2;
-}
-
-.mosaic-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.02);
-  transition: transform 700ms ease;
-}
-
-.mosaic-card:hover img {
-  transform: scale(1.07);
-}
-
-.mosaic-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+.feature-card:nth-child(even) {
   background:
-    linear-gradient(180deg, transparent 34%, rgba(13, 9, 6, 0.84)),
-    radial-gradient(circle at 50% 20%, transparent, rgba(13, 9, 6, 0.14));
+    linear-gradient(rgba(54, 31, 17, 0.78), rgba(13, 9, 6, 0.82)),
+    var(--wood-rustic);
+  background-size: cover, cover;
 }
 
-.mosaic-card div {
-  position: absolute;
-  left: 22px;
-  right: 22px;
-  bottom: 20px;
-  z-index: 2;
+.feature-card:nth-child(even) h3,
+.feature-card:nth-child(even) p {
   color: var(--paper);
-}
-
-.mosaic-card span {
-  display: block;
-  font-family: var(--font-display), cursive;
-  font-size: clamp(2.1rem, 3.3vw, 3.7rem);
-  line-height: 0.9;
-}
-
-.mosaic-card p {
-  margin: 8px 0 0;
-  max-width: 430px;
-  color: rgba(255, 247, 232, 0.75);
+  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
 }
 
 /* Cabins */
 
 .cabin-tabs {
-  max-width: 940px;
-  margin: 34px auto 30px;
+  max-width: 900px;
+  margin: 32px auto 30px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 7px;
   padding: 7px;
   border-radius: 20px;
   border: 1px solid rgba(36, 21, 13, 0.14);
-  background-color: var(--cream);
-  background-image:
-    linear-gradient(rgba(255, 247, 232, 0.58), rgba(234, 213, 173, 0.64)),
-    var(--wood-white);
+  background:
+    linear-gradient(rgba(224, 182, 116, 0.48), rgba(171, 112, 60, 0.34)),
+    var(--wood-warm);
   background-size: cover, cover;
-  background-position: center, center;
   box-shadow: var(--shadow-soft);
 }
 
 .cabin-tabs button {
   cursor: pointer;
   text-align: left;
-  padding: 17px 20px;
+  padding: 16px 18px;
   border: 0;
   border-radius: 14px;
-  color: var(--walnut);
-  background: transparent;
-  transition:
-    transform 180ms ease,
-    background 180ms ease,
-    color 180ms ease;
+  color: #1b0f08;
+  background: rgba(255, 247, 232, 0.44);
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+  font-weight: 900;
 }
 
 .cabin-tabs button:hover,
@@ -721,14 +612,10 @@ p {
   display: block;
 }
 
-.cabin-tabs span {
-  font-weight: 800;
-}
-
 .cabin-tabs small {
   margin-top: 4px;
-  opacity: 0.72;
-  font-weight: 700;
+  color: rgba(27, 15, 8, 0.78);
+  font-weight: 800;
 }
 
 .cabin-showcase {
@@ -740,12 +627,12 @@ p {
 
 .cabin-collage {
   position: relative;
-  min-height: 610px;
+  min-height: 590px;
 }
 
 .cabin-main-img {
   width: 82%;
-  height: 610px;
+  height: 590px;
   object-fit: cover;
   border-radius: var(--curve-a);
   box-shadow: var(--shadow-wood);
@@ -756,7 +643,7 @@ p {
   right: 0;
   bottom: 34px;
   width: 42%;
-  height: 330px;
+  height: 320px;
   object-fit: cover;
   border-radius: var(--curve-b);
   border: 10px solid var(--cream);
@@ -764,15 +651,13 @@ p {
 }
 
 .cabin-info-card {
-  padding: clamp(28px, 4vw, 48px);
+  padding: clamp(28px, 4vw, 46px);
   border-radius: var(--curve-b);
   color: var(--paper);
-  background-color: var(--char);
-  background-image:
-    linear-gradient(rgba(36, 21, 13, 0.78), rgba(13, 9, 6, 0.82)),
+  background:
+    linear-gradient(rgba(36, 21, 13, 0.72), rgba(13, 9, 6, 0.8)),
     var(--wood-rustic);
   background-size: cover, cover;
-  background-position: center, center;
   box-shadow: var(--shadow-wood);
 }
 
@@ -780,8 +665,14 @@ p {
   color: var(--brass-light);
 }
 
+.cabin-info-card h3,
 .cabin-info-card p {
-  color: rgba(255, 247, 232, 0.76);
+  color: var(--paper);
+}
+
+.cabin-info-card p {
+  color: rgba(255, 247, 232, 0.92);
+  font-weight: 600;
 }
 
 .cabin-meta,
@@ -803,29 +694,25 @@ p {
 .detail-list span {
   padding: 10px 12px;
   border-radius: 999px;
-  color: rgba(255, 247, 232, 0.92);
-  border: 1px solid rgba(255, 247, 232, 0.16);
-  background: rgba(255, 247, 232, 0.08);
-  font-weight: 700;
+  color: rgba(255, 247, 232, 0.95);
+  border: 1px solid rgba(255, 247, 232, 0.18);
+  background: rgba(255, 247, 232, 0.09);
+  font-weight: 800;
 }
 
-/* Image breaks */
+/* Image break */
 
 .image-break {
   position: relative;
   min-height: 68vh;
-  width: min(1360px, calc(100% - 36px));
-  margin: 46px auto;
+  width: min(1320px, calc(100% - 36px));
+  margin: 60px auto;
   display: grid;
   align-items: center;
   overflow: hidden;
   border-radius: var(--curve-a);
   background: var(--char);
   box-shadow: var(--shadow-wood);
-}
-
-.image-break-2 {
-  border-radius: var(--curve-b);
 }
 
 .image-break > img {
@@ -840,8 +727,8 @@ p {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(13, 9, 6, 0.78), rgba(13, 9, 6, 0.14), rgba(13, 9, 6, 0.58)),
-    linear-gradient(180deg, rgba(13, 9, 6, 0.1), rgba(13, 9, 6, 0.62));
+    linear-gradient(90deg, rgba(13, 9, 6, 0.72), rgba(13, 9, 6, 0.14), rgba(13, 9, 6, 0.42)),
+    linear-gradient(180deg, rgba(13, 9, 6, 0.1), rgba(13, 9, 6, 0.54));
 }
 
 .image-break-content {
@@ -851,17 +738,14 @@ p {
 
 .break-panel {
   max-width: 570px;
-  padding: clamp(28px, 4vw, 52px);
+  padding: clamp(28px, 4vw, 50px);
   color: var(--paper);
   border-radius: var(--curve-b);
-  border: 1px solid rgba(255, 247, 232, 0.22);
-  background-color: var(--char);
-  background-image:
-    linear-gradient(rgba(36, 21, 13, 0.74), rgba(13, 9, 6, 0.76)),
+  border: 1px solid rgba(255, 247, 232, 0.2);
+  background:
+    linear-gradient(rgba(36, 21, 13, 0.76), rgba(13, 9, 6, 0.82)),
     var(--wood-rustic);
   background-size: cover, cover;
-  background-position: center, center;
-  backdrop-filter: blur(12px);
   box-shadow: var(--shadow-dark);
 }
 
@@ -869,30 +753,22 @@ p {
   margin-left: auto;
 }
 
+.break-panel .eyebrow,
+.break-panel h2,
+.break-panel p {
+  color: var(--paper);
+}
+
 .break-panel .eyebrow {
   color: var(--brass-light);
 }
 
 .break-panel p {
-  color: rgba(255, 247, 232, 0.78);
+  color: rgba(255, 247, 232, 0.92);
+  font-weight: 600;
 }
 
 /* Creek */
-
-.creek-section {
-  position: relative;
-  color: var(--paper);
-  background-color: var(--char);
-  background-image:
-    linear-gradient(rgba(36, 21, 13, 0.8), rgba(13, 9, 6, 0.84)),
-    var(--wood-rustic);
-  background-size: cover, cover;
-  background-position: center, center;
-}
-
-.creek-section .eyebrow {
-  color: var(--brass-light);
-}
 
 .creek-grid {
   display: grid;
@@ -901,9 +777,22 @@ p {
   align-items: center;
 }
 
+.creek-section .eyebrow,
+.video-reel-section .eyebrow,
+.final-cta .eyebrow,
+.wedding-card .eyebrow {
+  color: var(--brass-light);
+}
+
+.creek-copy h2,
 .creek-copy p {
-  color: rgba(255, 247, 232, 0.76);
+  color: var(--paper);
+}
+
+.creek-copy p {
+  color: rgba(255, 247, 232, 0.92);
   font-size: 1.05rem;
+  font-weight: 600;
 }
 
 .creek-chip-grid {
@@ -917,19 +806,19 @@ p {
   padding: 12px 14px;
   border-radius: 999px;
   color: var(--paper);
-  border: 1px solid rgba(255, 247, 232, 0.16);
-  background: rgba(255, 247, 232, 0.08);
-  font-weight: 700;
+  border: 1px solid rgba(255, 247, 232, 0.18);
+  background: rgba(255, 247, 232, 0.1);
+  font-weight: 800;
 }
 
 .creek-photo-stack {
   position: relative;
-  min-height: 590px;
+  min-height: 560px;
 }
 
 .creek-photo-stack-v2 .creek-large {
   width: 88%;
-  height: 560px;
+  height: 540px;
   object-fit: cover;
   border-radius: var(--curve-b);
   box-shadow: var(--shadow-dark);
@@ -940,7 +829,7 @@ p {
   right: 0;
   top: 54px;
   width: 42%;
-  height: 250px;
+  height: 240px;
   object-fit: cover;
   border-radius: var(--curve-a);
   border: 10px solid rgba(255, 247, 232, 0.12);
@@ -955,13 +844,10 @@ p {
   padding: 22px;
   border-radius: var(--curve-a);
   border: 1px solid rgba(255, 247, 232, 0.18);
-  background-color: var(--char);
-  background-image:
-    linear-gradient(rgba(36, 21, 13, 0.74), rgba(13, 9, 6, 0.76)),
+  background:
+    linear-gradient(rgba(36, 21, 13, 0.76), rgba(13, 9, 6, 0.82)),
     var(--wood-rustic);
   background-size: cover, cover;
-  background-position: center, center;
-  backdrop-filter: blur(12px);
 }
 
 .creek-note strong,
@@ -970,102 +856,16 @@ p {
 }
 
 .creek-note strong {
+  color: var(--paper);
   font-family: var(--font-display), cursive;
-  font-size: clamp(2.25rem, 4vw, 4.4rem);
+  font-size: clamp(2.25rem, 4vw, 4.2rem);
   line-height: 0.9;
 }
 
 .creek-note span {
   margin-top: 8px;
-  color: rgba(255, 247, 232, 0.72);
-}
-
-/* Local videos */
-
-.video-reel-section {
-  padding: 110px 0;
-}
-
-.video-reel-bg {
-  position: relative;
-  z-index: 1;
-  width: min(1420px, calc(100% - 32px));
-  margin: 0 auto;
-  overflow: hidden;
-  color: var(--paper);
-  border-radius: var(--curve-a);
-  background-color: var(--char);
-  background-image:
-    linear-gradient(rgba(36, 21, 13, 0.78), rgba(13, 9, 6, 0.82)),
-    var(--wood-rustic);
-  background-size: cover, cover;
-  background-position: center, center;
-  box-shadow: var(--shadow-wood);
-}
-
-.video-reel-inner {
-  padding: clamp(34px, 6vw, 76px) 0;
-}
-
-.video-reel-copy {
-  max-width: 790px;
-  margin-bottom: 34px;
-}
-
-.video-reel-copy .eyebrow {
-  color: var(--brass-light);
-}
-
-.video-reel-copy p {
-  color: rgba(255, 247, 232, 0.72);
-}
-
-.video-reel-track {
-  display: grid;
-  grid-template-columns: 1.15fr 0.82fr 0.82fr;
-  gap: 18px;
-}
-
-.local-video video {
-  width: 100%;
-  height: 430px;
-  display: block;
-  object-fit: cover;
-  border-radius: var(--curve-b);
-  background: #000;
-  box-shadow: var(--shadow-dark);
-}
-
-.local-video-2 video,
-.local-video-3 video {
-  height: 330px;
-  border-radius: var(--curve-a);
-}
-
-.local-video div {
-  margin-top: 16px;
-}
-
-.local-video span {
-  display: block;
-  color: var(--brass-light);
-  font-size: 0.76rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-weight: 700;
-}
-
-.local-video strong {
-  display: block;
-  margin-top: 5px;
-  font-family: var(--font-display), cursive;
-  font-size: clamp(2.1rem, 3.5vw, 3.8rem);
-  line-height: 0.9;
-}
-
-.local-video p {
-  margin-bottom: 0;
-  color: rgba(255, 247, 232, 0.68);
+  color: rgba(255, 247, 232, 0.9);
+  font-weight: 600;
 }
 
 /* Wedding */
@@ -1075,30 +875,31 @@ p {
   grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.75fr);
   gap: 28px;
   align-items: stretch;
-  padding: clamp(28px, 5vw, 58px);
+  padding: clamp(28px, 5vw, 56px);
   overflow: hidden;
   color: var(--paper);
   border-radius: var(--curve-a);
-  background-color: var(--char);
-  background-image:
-    linear-gradient(rgba(36, 21, 13, 0.78), rgba(13, 9, 6, 0.82)),
+  background:
+    radial-gradient(circle at 90% 8%, rgba(223, 189, 119, 0.1), transparent 24rem),
+    linear-gradient(rgba(36, 21, 13, 0.68), rgba(13, 9, 6, 0.78)),
     var(--wood-rustic);
-  background-size: cover, cover;
-  background-position: center, center;
+  background-size: auto, cover, cover;
   box-shadow: var(--shadow-wood);
 }
 
 .wedding-copy {
-  max-width: 800px;
+  max-width: 790px;
 }
 
-.wedding-copy .eyebrow {
-  color: var(--brass-light);
+.wedding-copy h2,
+.wedding-copy p {
+  color: var(--paper);
 }
 
 .wedding-copy p {
   max-width: 720px;
-  color: rgba(255, 247, 232, 0.78);
+  color: rgba(255, 247, 232, 0.92);
+  font-weight: 600;
 }
 
 .wedding-flow {
@@ -1112,9 +913,9 @@ p {
   padding: 11px 13px;
   border-radius: 999px;
   color: var(--paper);
-  border: 1px solid rgba(255, 247, 232, 0.16);
-  background: rgba(255, 247, 232, 0.08);
-  font-weight: 700;
+  border: 1px solid rgba(255, 247, 232, 0.18);
+  background: rgba(255, 247, 232, 0.1);
+  font-weight: 800;
 }
 
 .wedding-image-panel {
@@ -1153,7 +954,8 @@ p {
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  font-weight: 700;
+  font-weight: 800;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
 }
 
 .wedding-image-panel strong {
@@ -1161,8 +963,84 @@ p {
   margin-top: 10px;
   color: var(--paper);
   font-family: var(--font-display), cursive;
-  font-size: clamp(2.35rem, 4.4vw, 4.7rem);
+  font-size: clamp(2.35rem, 4.4vw, 4.5rem);
   line-height: 0.9;
+  text-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+}
+
+/* Photo mosaic */
+
+.photo-mosaic {
+  margin-top: 38px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.78fr 0.86fr;
+  grid-auto-rows: 310px;
+  gap: 18px;
+}
+
+.mosaic-card {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: var(--curve-a);
+  background: var(--char);
+  box-shadow: var(--shadow-wood);
+}
+
+.mosaic-card:nth-child(even) {
+  border-radius: var(--curve-b);
+}
+
+.mosaic-card-1 {
+  grid-row: span 2;
+}
+
+.mosaic-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 700ms ease;
+}
+
+.mosaic-card:hover img {
+  transform: scale(1.06);
+}
+
+.mosaic-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, transparent 34%, rgba(13, 9, 6, 0.84)),
+    radial-gradient(circle at 50% 20%, transparent, rgba(13, 9, 6, 0.14));
+}
+
+.mosaic-card div {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 20px;
+  z-index: 2;
+  color: var(--paper);
+}
+
+.mosaic-card span {
+  display: block;
+  color: var(--paper);
+  font-family: var(--font-display), cursive;
+  font-size: clamp(2.1rem, 3.2vw, 3.5rem);
+  line-height: 0.9;
+  text-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+}
+
+.mosaic-card p {
+  margin: 8px 0 0;
+  max-width: 430px;
+  color: rgba(255, 247, 232, 0.92);
+  font-weight: 600;
 }
 
 /* Amenities / nearby / final */
@@ -1178,16 +1056,27 @@ p {
 .nearby-list span {
   padding: 14px 16px;
   border-radius: 999px;
-  color: var(--walnut);
-  background-color: var(--cream);
-  background-image:
-    linear-gradient(rgba(255, 247, 232, 0.58), rgba(234, 213, 173, 0.64)),
+  box-shadow: var(--shadow-soft);
+  font-weight: 900;
+}
+
+.amenity-pill {
+  color: var(--paper);
+  background:
+    linear-gradient(rgba(54, 31, 17, 0.72), rgba(23, 16, 11, 0.76)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+  border: 1px solid rgba(255, 247, 232, 0.13);
+}
+
+.amenity-pill:nth-child(3n),
+.amenity-pill:nth-child(4n) {
+  color: #1b0f08;
+  background:
+    linear-gradient(rgba(255, 247, 232, 0.58), rgba(234, 213, 173, 0.52)),
     var(--wood-white);
   background-size: cover, cover;
-  background-position: center, center;
-  border: 1px solid rgba(36, 21, 13, 0.12);
-  box-shadow: var(--shadow-soft);
-  font-weight: 700;
+  border: 1px solid rgba(59, 33, 19, 0.12);
 }
 
 .policy-strip {
@@ -1201,13 +1090,11 @@ p {
   padding: 20px;
   color: var(--paper);
   border-radius: var(--curve-b);
-  background-color: var(--char);
-  background-image:
-    linear-gradient(rgba(36, 21, 13, 0.78), rgba(13, 9, 6, 0.82)),
+  background:
+    linear-gradient(rgba(36, 21, 13, 0.72), rgba(13, 9, 6, 0.8)),
     var(--wood-rustic);
   background-size: cover, cover;
-  background-position: center, center;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .nearby-grid {
@@ -1225,9 +1112,19 @@ p {
 }
 
 .nearby-list span {
-  min-height: auto;
-  padding: 18px 20px;
-  font-weight: 800;
+  color: #1b0f08;
+  background:
+    linear-gradient(rgba(223, 189, 119, 0.46), rgba(169, 125, 54, 0.36)),
+    var(--wood-warm);
+  background-size: cover, cover;
+}
+
+.nearby-list span:nth-child(even) {
+  color: var(--paper);
+  background:
+    linear-gradient(rgba(54, 31, 17, 0.72), rgba(23, 16, 11, 0.78)),
+    var(--wood-rustic);
+  background-size: cover, cover;
 }
 
 .final-cta {
@@ -1235,27 +1132,27 @@ p {
 }
 
 .final-card {
-  position: relative;
-  z-index: 1;
-  padding: clamp(30px, 6vw, 70px);
+  padding: clamp(30px, 6vw, 68px);
   color: var(--paper);
   border-radius: var(--curve-a);
-  background-color: var(--char);
-  background-image:
-    linear-gradient(rgba(36, 21, 13, 0.78), rgba(13, 9, 6, 0.82)),
+  border: 1px solid rgba(255, 247, 232, 0.14);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.06), transparent 24rem),
+    linear-gradient(rgba(36, 21, 13, 0.72), rgba(13, 9, 6, 0.82)),
     var(--wood-rustic);
-  background-size: cover, cover;
-  background-position: center, center;
+  background-size: auto, cover, cover;
   box-shadow: var(--shadow-wood);
 }
 
-.final-card .eyebrow {
-  color: var(--brass-light);
+.final-card h2,
+.final-card p {
+  color: var(--paper);
 }
 
 .final-card p {
   max-width: 780px;
-  color: rgba(255, 247, 232, 0.76);
+  color: rgba(255, 247, 232, 0.92);
+  font-weight: 600;
 }
 
 .contact-grid {
@@ -1271,7 +1168,7 @@ p {
   padding: 18px;
   border-radius: var(--curve-b);
   border: 1px solid rgba(255, 247, 232, 0.16);
-  background: rgba(255, 247, 232, 0.08);
+  background: rgba(255, 247, 232, 0.1);
 }
 
 .contact-grid span,
@@ -1284,13 +1181,15 @@ p {
   font-size: 0.74rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .contact-grid strong {
   margin-top: 12px;
   overflow-wrap: anywhere;
+  color: var(--paper);
   line-height: 1.2;
+  font-weight: 900;
 }
 
 .booking-links {
@@ -1304,13 +1203,11 @@ p {
 
 .site-footer {
   padding: 42px 0;
-  color: rgba(255, 247, 232, 0.72);
-  background-color: var(--char);
-  background-image:
-    linear-gradient(rgba(13, 9, 6, 0.82), rgba(13, 9, 6, 0.86)),
+  color: rgba(255, 247, 232, 0.86);
+  background:
+    linear-gradient(rgba(13, 9, 6, 0.76), rgba(13, 9, 6, 0.84)),
     var(--wood-rustic);
   background-size: cover, cover;
-  background-position: center, center;
 }
 
 .footer-grid {
@@ -1328,6 +1225,10 @@ p {
   font-weight: 400;
 }
 
+.site-footer p {
+  color: rgba(255, 247, 232, 0.86);
+}
+
 .site-footer nav {
   display: flex;
   flex-wrap: wrap;
@@ -1338,7 +1239,7 @@ p {
   padding: 10px 12px;
   border-radius: 999px;
   background: rgba(255, 247, 232, 0.08);
-  font-weight: 700;
+  font-weight: 800;
 }
 
 /* Responsive */
@@ -1354,19 +1255,18 @@ p {
   .nearby-grid,
   .split-heading,
   .cabin-showcase,
-  .wedding-card,
-  .video-reel-track {
+  .wedding-card {
     grid-template-columns: 1fr;
-  }
-
-  .hero-empty {
-    display: none;
   }
 
   .hero-overlay {
     background:
       linear-gradient(180deg, rgba(13, 9, 6, 0.44), rgba(13, 9, 6, 0.76)),
       radial-gradient(circle at 50% 35%, rgba(13, 9, 6, 0.04), rgba(13, 9, 6, 0.7));
+  }
+
+  .hero-panel {
+    width: 100%;
   }
 
   .property-ribbon {
@@ -1376,13 +1276,13 @@ p {
   }
 
   .ribbon-lead {
+    flex-basis: auto;
     width: 100%;
     border-radius: 24px;
   }
 
   .ribbon-items {
     justify-content: flex-start;
-    flex-wrap: wrap;
   }
 
   .cabin-tabs,
@@ -1407,12 +1307,6 @@ p {
   .cabin-small-img {
     width: 48%;
   }
-
-  .local-video video,
-  .local-video-2 video,
-  .local-video-3 video {
-    height: 360px;
-  }
 }
 
 @media (max-width: 640px) {
@@ -1425,17 +1319,15 @@ p {
   }
 
   h1 {
-    font-size: clamp(4rem, 18vw, 6.4rem);
-    line-height: 0.86;
+    font-size: clamp(3.85rem, 17vw, 6.2rem);
   }
 
   h2 {
-    font-size: clamp(3.15rem, 14vw, 5rem);
-    line-height: 0.9;
+    font-size: clamp(3rem, 13vw, 4.8rem);
   }
 
   h3 {
-    font-size: clamp(2.35rem, 11vw, 4rem);
+    font-size: clamp(2.25rem, 10vw, 3.8rem);
   }
 
   .site-header {
@@ -1453,11 +1345,11 @@ p {
   }
 
   .hero.hero-full {
-    min-height: 760px;
+    min-height: 740px;
   }
 
   .hero-inner {
-    min-height: 760px;
+    min-height: 740px;
     padding-top: 110px;
     padding-bottom: 76px;
   }
@@ -1477,20 +1369,6 @@ p {
     width: 100%;
   }
 
-  .hero-proof {
-    grid-template-columns: 1fr;
-    border-radius: 24px;
-  }
-
-  .hero-proof div {
-    border-right: 0;
-    border-bottom: 1px solid rgba(255, 247, 232, 0.1);
-  }
-
-  .hero-proof div:last-child {
-    border-bottom: 0;
-  }
-
   .photo-mosaic {
     grid-template-columns: 1fr;
     grid-auto-rows: 320px;
@@ -1501,8 +1379,8 @@ p {
   }
 
   .image-break {
-    min-height: 610px;
-    width: min(100% - 26px, 1360px);
+    min-height: 580px;
+    width: min(100% - 26px, 1320px);
     border-radius: 30px;
   }
 
@@ -1538,7 +1416,6 @@ p {
   .final-card,
   .mosaic-card,
   .mosaic-card:nth-child(even),
-  .image-break-2,
   .creek-photo-stack-v2 .creek-large {
     border-radius: 28px;
   }
@@ -1560,171 +1437,249 @@ p {
 }
 
 /* =========================================================
-   COPY + READABILITY TIGHTENUP
+   CLIENT REVISION: CALMER BRAND, LESS BUSY TYPE/TEXTURES,
+   REVIEW SECTION, PHOTO-LED PREVIEW
    ========================================================= */
+
+:root {
+  --soft-cream: #f7ead0;
+  --warm-sand: #e5c083;
+  --deep-brown: #1a0e08;
+  --coffee: #2a160c;
+  --soft-ink: #201208;
+}
+
+/* Use the script as a true accent, not every title everywhere */
+h2,
+h3,
+.mosaic-card span,
+.creek-note strong,
+.local-video strong,
+.wedding-image-panel strong,
+.site-footer strong {
+  font-family: var(--font-body), system-ui, sans-serif;
+  letter-spacing: -0.045em;
+  font-weight: 850;
+  line-height: 0.98;
+}
+
+h1,
+.hero-panel h1 {
+  font-family: var(--font-display), cursive;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: clamp(2.25rem, 4.4vw, 5.15rem);
+}
+
+h3 {
+  font-size: clamp(1.45rem, 2.2vw, 2.35rem);
+}
+
+p {
+  font-weight: 560;
+}
+
+/* The far/background stays warm, but section rhythm is cleaner */
+body {
+  background-color: #d7ad72;
+  background-image:
+    linear-gradient(rgba(246, 235, 210, 0.14), rgba(234, 213, 173, 0.22)),
+    var(--wood-warm);
+}
+
+/* Header calmer */
+.site-header {
+  border-radius: 999px;
+  background-image:
+    linear-gradient(rgba(23, 16, 11, 0.78), rgba(23, 16, 11, 0.84)),
+    var(--wood-rustic);
+}
+
+.desktop-nav a {
+  font-size: 0.86rem;
+}
+
+/* Hero: photo led, cleaner dark card */
+.hero-bg {
+  filter: saturate(1.03) contrast(1.02) sepia(0.03);
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(13, 9, 6, 0.76) 0%, rgba(13, 9, 6, 0.36) 48%, rgba(13, 9, 6, 0.06) 100%),
+    linear-gradient(180deg, rgba(13, 9, 6, 0.38) 0%, rgba(13, 9, 6, 0.06) 48%, rgba(13, 9, 6, 0.52) 100%);
+}
+
+.hero-inner {
+  grid-template-columns: minmax(440px, 0.72fr) minmax(0, 0.95fr);
+}
+
+.hero-panel {
+  max-width: 720px;
+  background-image:
+    linear-gradient(rgba(33, 18, 10, 0.84), rgba(13, 9, 6, 0.88)),
+    var(--wood-rustic);
+}
+
+.hero-panel h1 {
+  font-size: clamp(4.1rem, 7.8vw, 8.6rem);
+  line-height: 0.84;
+}
+
+.hero-panel .hero-text {
+  color: rgba(255, 247, 232, 0.92);
+  font-size: clamp(1rem, 1.3vw, 1.14rem);
+  max-width: 620px;
+}
+
+/* At-a-glance: warmer and simpler */
+.property-ribbon-section {
+  padding-bottom: 72px;
+}
+
+.property-ribbon {
+  background:
+    radial-gradient(circle at 16% 0%, rgba(255, 247, 232, 0.32), transparent 24rem),
+    linear-gradient(135deg, rgba(229, 192, 131, 0.78), rgba(199, 145, 82, 0.62)),
+    var(--wood-warm);
+  background-size: auto, cover, cover;
+}
+
+.ribbon-lead {
+  background:
+    linear-gradient(rgba(34, 18, 9, 0.82), rgba(13, 9, 6, 0.86)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+}
+
+.ribbon-items span {
+  background: rgba(255, 247, 232, 0.42);
+  color: #1d1008;
+  border: 1px solid rgba(59, 33, 19, 0.1);
+}
+
+/* Section backgrounds: split textures and solids instead of repeating white cards */
+.intro-section {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(255, 247, 232, 0.42), transparent 30rem),
+    linear-gradient(180deg, #f4dfb7 0%, #e1bd81 100%);
+}
+
+.cabins-section {
+  background:
+    radial-gradient(circle at 85% 0%, rgba(255, 247, 232, 0.48), transparent 30rem),
+    radial-gradient(circle at 18% 100%, rgba(96, 55, 28, 0.12), transparent 34rem),
+    linear-gradient(180deg, #f8edd7 0%, #e7c892 100%);
+}
+
+.photo-mosaic-section {
+  background:
+    linear-gradient(rgba(255, 247, 232, 0.48), rgba(234, 213, 173, 0.56)),
+    var(--wood-white);
+  background-size: cover, cover;
+}
+
+.wedding-section {
+  background:
+    radial-gradient(circle at 78% 10%, rgba(255, 247, 232, 0.26), transparent 30rem),
+    linear-gradient(135deg, #d6a165 0%, #e8c894 52%, #f2dfbd 100%);
+}
+
+.amenities-section {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 247, 232, 0.28), transparent 28rem),
+    linear-gradient(rgba(228, 184, 116, 0.48), rgba(180, 115, 58, 0.34)),
+    var(--wood-warm);
+  background-size: auto, cover, cover;
+}
+
+.reviews-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(218, 178, 103, 0.15), transparent 30rem),
+    radial-gradient(circle at 90% 90%, rgba(122, 72, 36, 0.18), transparent 34rem),
+    linear-gradient(135deg, #160c07 0%, #2a160c 56%, #3b2113 100%);
+  color: var(--paper);
+}
+
+.nearby-section {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(255, 247, 232, 0.48), transparent 30rem),
+    radial-gradient(circle at 88% 80%, rgba(96, 55, 28, 0.1), transparent 30rem),
+    linear-gradient(180deg, #f6e6c8 0%, #e9c990 100%);
+}
+
+.final-cta {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(223, 189, 119, 0.14), transparent 30rem),
+    radial-gradient(circle at 88% 90%, rgba(122, 72, 36, 0.18), transparent 30rem),
+    linear-gradient(135deg, #120a06 0%, #27160d 48%, #3b2113 100%);
+}
+
+/* Clean text cards */
+.intro-heading-card,
+.cabins-section .section-heading,
+.amenities-section .section-heading,
+.nearby-section .section-heading {
+  background: rgba(255, 247, 232, 0.38);
+  border: 1px solid rgba(59, 33, 19, 0.08);
+  box-shadow: 0 18px 44px rgba(59, 33, 19, 0.08);
+  border-radius: var(--curve-a);
+  padding: clamp(22px, 3.5vw, 38px);
+}
 
 .section-heading h2,
 .feature-card h3,
-.cabin-tabs button,
-.ribbon-items span,
-.amenity-pill,
-.nearby-list span {
-  color: #2b160b;
+.cabins-section h2,
+.amenities-section h2,
+.nearby-section h2 {
+  color: #1a0e08;
+  text-shadow: 0 1px 0 rgba(255, 247, 232, 0.42);
 }
 
 .section-heading p,
 .feature-card p,
 .intro-section p,
 .cabins-section p,
+.photo-mosaic-section p,
 .amenities-section p,
 .nearby-section p,
-.photo-mosaic-section p {
-  color: #3f2818;
+.split-heading > p {
+  color: #2a170c;
   opacity: 1;
+  font-weight: 600;
 }
 
-.hero-panel .hero-text,
-.break-panel p,
-.creek-copy p,
-.creek-note span,
-.video-reel-copy p,
-.local-video p,
-.wedding-copy p,
-.final-card p,
-.cabin-info-card p {
-  color: rgba(255, 247, 232, 0.9);
+.eyebrow,
+.intro-section .eyebrow,
+.cabins-section .eyebrow,
+.photo-mosaic-section .eyebrow,
+.amenities-section .eyebrow,
+.nearby-section .eyebrow {
+  color: #4a2815;
+  font-weight: 900;
 }
 
-.hero-proof span {
-  color: rgba(255, 247, 232, 0.72);
-}
-
-.hero-proof strong {
-  color: #fff7e8;
-}
-
-.eyebrow {
-  color: #5a351c;
-}
-
-.hero-kicker,
-.break-panel .eyebrow,
-.creek-section .eyebrow,
-.video-reel-copy .eyebrow,
-.local-video span,
-.wedding-copy .eyebrow,
-.final-card .eyebrow,
-.cabin-info-card .eyebrow,
-.creek-note .eyebrow {
-  color: #e2bd72;
-}
-
-.ribbon-lead strong {
-  color: #fff7e8;
-}
-
-.ribbon-lead span {
-  color: #e2bd72;
-}
-
-.policy-strip span {
-  color: #fff7e8;
-}
-
-.mosaic-card p {
-  color: rgba(255, 247, 232, 0.88);
-}
-
-.mosaic-card span,
-.creek-note strong,
-.local-video strong,
-.wedding-image-panel strong,
-.site-footer strong {
-  color: #fff7e8;
-}
-
-.contact-grid span {
-  color: #e2bd72;
-}
-
-.contact-grid strong {
-  color: #fff7e8;
-}
-
-.site-footer,
-.site-footer p,
-.site-footer nav a {
-  color: rgba(255, 247, 232, 0.86);
-}
-
-/* =========================================================
-   SECTION RHYTHM / BACKGROUND TIGHTENUP
-   Keeps the wood theme but stops every section/card from
-   using the same white-washed texture.
-   ========================================================= */
-
-/* Main body background stays as the far background */
-body {
-  background-color: #d7b27b;
-  background-image:
-    linear-gradient(rgba(246, 235, 210, 0.22), rgba(234, 213, 173, 0.32)),
-    var(--wood-warm);
-  background-size: cover, cover;
-  background-position: center, center;
-  background-attachment: fixed, fixed;
-}
-
-/* Property ribbon: make it feel like a warm plank, not another white card */
-.property-ribbon {
-  background-color: #d7a96e;
-  background-image:
-    linear-gradient(rgba(255, 247, 232, 0.28), rgba(191, 132, 75, 0.28)),
-    var(--wood-warm);
-  background-size: cover, cover;
-  background-position: center, center;
-}
-
-.ribbon-items span {
-  color: #2b160b;
-  background: rgba(255, 247, 232, 0.34);
-  border: 1px solid rgba(59, 33, 19, 0.1);
-}
-
-/* Intro: use warm wood texture instead of white-wash */
-.intro-section {
-  background-color: #d6aa71;
-  background-image:
-    radial-gradient(circle at 12% 0%, rgba(255, 247, 232, 0.24), transparent 28rem),
-    linear-gradient(rgba(245, 221, 178, 0.34), rgba(188, 126, 69, 0.3)),
-    var(--wood-warm);
-  background-size: auto, cover, cover;
-  background-position: center, center, center;
-}
-
-.intro-section .section-heading {
-  padding: clamp(18px, 3vw, 30px);
-  border-radius: var(--curve-a);
-  background: rgba(255, 247, 232, 0.28);
-  border: 1px solid rgba(59, 33, 19, 0.1);
-  box-shadow: var(--shadow-soft);
-}
-
+/* Feature cards alternate but stay readable */
 .feature-card {
-  margin-bottom: 14px;
-  padding: 24px 26px;
   border-left: 0;
   border-radius: var(--curve-b);
+  padding: 24px 26px;
+  margin-bottom: 14px;
   background:
-    linear-gradient(rgba(255, 247, 232, 0.56), rgba(234, 213, 173, 0.48)),
+    linear-gradient(rgba(255, 247, 232, 0.66), rgba(234, 213, 173, 0.58)),
     var(--wood-white);
   background-size: cover, cover;
   border: 1px solid rgba(59, 33, 19, 0.12);
-  box-shadow: var(--shadow-soft);
 }
 
 .feature-card:nth-child(even) {
   background:
-    linear-gradient(rgba(72, 42, 23, 0.74), rgba(23, 16, 11, 0.78)),
+    linear-gradient(rgba(54, 31, 17, 0.78), rgba(13, 9, 6, 0.84)),
     var(--wood-rustic);
   background-size: cover, cover;
 }
@@ -1732,464 +1687,266 @@ body {
 .feature-card:nth-child(even) h3,
 .feature-card:nth-child(even) p {
   color: #fff7e8;
+  text-shadow: none;
 }
 
-/* Cabins: make this a clean solid section so the cabin photos breathe */
-.cabins-section {
-  background:
-    radial-gradient(circle at 15% 8%, rgba(255, 247, 232, 0.52), transparent 32rem),
-    radial-gradient(circle at 85% 15%, rgba(117, 74, 38, 0.13), transparent 30rem),
-    linear-gradient(180deg, #f2dfb9 0%, #e8c994 48%, #f3e2c0 100%);
-}
-
-.cabins-section .section-heading {
-  max-width: 700px;
-}
-
+/* Cabin selector calm-down */
 .cabin-tabs {
   background:
-    linear-gradient(rgba(224, 182, 116, 0.52), rgba(171, 112, 60, 0.38)),
+    linear-gradient(rgba(228, 184, 116, 0.52), rgba(171, 112, 60, 0.36)),
     var(--wood-warm);
   background-size: cover, cover;
-  border-color: rgba(59, 33, 19, 0.18);
 }
 
 .cabin-tabs button {
-  background: rgba(255, 247, 232, 0.42);
-}
-
-.cabin-tabs button:hover,
-.cabin-tabs button.active {
-  background: linear-gradient(180deg, var(--brass-light), var(--brass));
-}
-
-/* Creek stays dark, but let the wood texture show more */
-.creek-section {
-  background-color: var(--char);
-  background-image:
-    radial-gradient(circle at 16% 18%, rgba(216, 180, 102, 0.12), transparent 30rem),
-    linear-gradient(rgba(36, 21, 13, 0.62), rgba(13, 9, 6, 0.78)),
-    var(--wood-rustic);
-  background-size: auto, cover, cover;
-  background-position: center, center, center;
-}
-
-.creek-chip-grid span {
-  background: rgba(255, 247, 232, 0.12);
-  border-color: rgba(255, 247, 232, 0.2);
-}
-
-/* Videos: solid dark brown stage instead of another full texture section */
-.video-reel-section {
-  background:
-    radial-gradient(circle at 18% 0%, rgba(216, 180, 102, 0.16), transparent 32rem),
-    radial-gradient(circle at 80% 100%, rgba(122, 72, 36, 0.18), transparent 34rem),
-    linear-gradient(135deg, #2a170d 0%, #120a06 58%, #3b2113 100%);
-}
-
-.video-reel-bg {
-  background-image:
-    linear-gradient(rgba(36, 21, 13, 0.56), rgba(13, 9, 6, 0.68)),
-    var(--wood-rustic);
-  background-size: cover, cover;
-  border: 1px solid rgba(255, 247, 232, 0.12);
-}
-
-/* Photo mosaic: use white-washed texture here only, because images sit on it well */
-.photo-mosaic-section {
-  background-color: var(--cream);
-  background-image:
-    radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.2), transparent 24rem),
-    linear-gradient(rgba(255, 247, 232, 0.42), rgba(234, 213, 173, 0.5)),
-    var(--wood-white);
-  background-size: auto, cover, cover;
-}
-
-/* Wedding: standard warm solid background, dark wood card */
-.wedding-section {
-  background:
-    radial-gradient(circle at 80% 10%, rgba(91, 48, 24, 0.14), transparent 28rem),
-    radial-gradient(circle at 20% 100%, rgba(255, 247, 232, 0.32), transparent 32rem),
-    linear-gradient(180deg, #e5c28a 0%, #c99a62 52%, #ead4aa 100%);
-}
-
-.wedding-card {
-  background-image:
-    radial-gradient(circle at 90% 8%, rgba(223, 189, 119, 0.1), transparent 24rem),
-    linear-gradient(rgba(36, 21, 13, 0.64), rgba(13, 9, 6, 0.76)),
-    var(--wood-rustic);
-  background-size: auto, cover, cover;
-}
-
-/* Amenities: warm texture section, but pills are not white-wash anymore */
-.amenities-section {
-  background-color: #d7a96e;
-  background-image:
-    linear-gradient(rgba(241, 211, 160, 0.34), rgba(176, 113, 59, 0.28)),
-    var(--wood-warm);
-  background-size: cover, cover;
-}
-
-.amenity-pill {
-  color: #fff7e8;
-  background:
-    linear-gradient(rgba(54, 31, 17, 0.72), rgba(23, 16, 11, 0.76)),
-    var(--wood-rustic);
-  background-size: cover, cover;
-  border-color: rgba(255, 247, 232, 0.13);
-}
-
-.amenity-pill:nth-child(3n),
-.amenity-pill:nth-child(4n) {
-  color: #2b160b;
-  background:
-    linear-gradient(rgba(255, 247, 232, 0.5), rgba(234, 213, 173, 0.48)),
-    var(--wood-white);
-  background-size: cover, cover;
-  border-color: rgba(59, 33, 19, 0.12);
-}
-
-/* Nearby: make this a clean solid paper/depth section */
-.nearby-section {
-  background:
-    radial-gradient(circle at 20% 0%, rgba(255, 247, 232, 0.54), transparent 30rem),
-    radial-gradient(circle at 80% 75%, rgba(91, 48, 24, 0.12), transparent 30rem),
-    linear-gradient(180deg, #f5e5c6 0%, #e8cb98 100%);
-}
-
-.nearby-list span {
-  color: #2b160b;
-  background:
-    linear-gradient(rgba(223, 189, 119, 0.46), rgba(169, 125, 54, 0.36)),
-    var(--wood-warm);
-  background-size: cover, cover;
-}
-
-.nearby-list span:nth-child(even) {
-  color: #fff7e8;
-  background:
-    linear-gradient(rgba(54, 31, 17, 0.7), rgba(23, 16, 11, 0.76)),
-    var(--wood-rustic);
-  background-size: cover, cover;
-}
-
-/* Final CTA: dark rich solid section, card still textured */
-.final-cta {
-  background:
-    radial-gradient(circle at 15% 0%, rgba(223, 189, 119, 0.12), transparent 30rem),
-    radial-gradient(circle at 88% 90%, rgba(122, 72, 36, 0.18), transparent 30rem),
-    linear-gradient(135deg, #120a06 0%, #27160d 48%, #3b2113 100%);
-}
-
-.final-card {
-  border: 1px solid rgba(255, 247, 232, 0.14);
-}
-
-/* Keep all light-section text strong */
-.intro-section p,
-.cabins-section p,
-.photo-mosaic-section p,
-.amenities-section p,
-.nearby-section p {
-  color: #3a2415;
-}
-
-.section-heading h2,
-.feature-card h3 {
-  color: #2b160b;
-}
-
-/* Give light sections a little breathing depth */
-.intro-section,
-.cabins-section,
-.photo-mosaic-section,
-.wedding-section,
-.amenities-section,
-.nearby-section {
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.22),
-    inset 0 -42px 90px rgba(59, 33, 19, 0.08);
-}
-
-/* Tighten some oversized script in content-heavy sections */
-.intro-section h2,
-.cabins-section h2,
-.amenities-section h2,
-.nearby-section h2 {
-  max-width: 720px;
-}
-
-/* Better spacing between mixed backgrounds */
-.property-ribbon-section {
-  padding-bottom: 64px;
-}
-
-.image-break {
-  margin-top: 64px;
-  margin-bottom: 64px;
-}
-
-@media (max-width: 980px) {
-  .feature-card {
-    padding: 22px;
-  }
-}
-
-@media (max-width: 640px) {
-  .intro-section .section-heading {
-    padding: 22px;
-  }
-
-  .feature-card {
-    border-radius: 24px;
-  }
-}
-
-/* =========================================================
-   FINAL CONTRAST PASS
-   Keeps the current look, fixes warm-wood/brown text clash.
-   ========================================================= */
-
-/* Light / warm wood sections need stronger ink */
-.intro-section,
-.cabins-section,
-.photo-mosaic-section,
-.wedding-section,
-.amenities-section,
-.nearby-section {
-  color: #1d1008;
-}
-
-.intro-section h2,
-.intro-section h3,
-.cabins-section h2,
-.cabins-section h3,
-.photo-mosaic-section h2,
-.photo-mosaic-section h3,
-.amenities-section h2,
-.amenities-section h3,
-.nearby-section h2,
-.nearby-section h3 {
+  background: rgba(255, 247, 232, 0.46);
   color: #1b0f08;
-  text-shadow:
-    0 1px 0 rgba(255, 247, 232, 0.7),
-    0 12px 28px rgba(59, 33, 19, 0.12);
 }
 
-.intro-section p,
-.cabins-section p,
-.photo-mosaic-section p,
-.amenities-section p,
-.nearby-section p {
-  color: #29170c;
-  font-weight: 600;
-}
-
-/* Eyebrows on light wood need to be darker, not faded brass */
-.intro-section .eyebrow,
-.cabins-section .eyebrow,
-.photo-mosaic-section .eyebrow,
-.amenities-section .eyebrow,
-.nearby-section .eyebrow {
-  color: #4a2815;
-  text-shadow: 0 1px 0 rgba(255, 247, 232, 0.55);
-}
-
-/* Subtle wash behind loose heading/copy blocks only */
-.intro-section .section-heading,
-.cabins-section .section-heading,
-.amenities-section .section-heading,
-.nearby-section .section-heading {
-  background: rgba(255, 247, 232, 0.22);
-  border: 1px solid rgba(59, 33, 19, 0.08);
-  box-shadow: 0 18px 44px rgba(59, 33, 19, 0.08);
-}
-
-/* Split heading side copy needs contrast too */
-.split-heading > p {
-  color: #2b180d;
-  font-weight: 600;
-  background: rgba(255, 247, 232, 0.22);
-  border: 1px solid rgba(59, 33, 19, 0.08);
-  border-radius: 22px;
-  padding: 18px;
-}
-
-/* Light cards/chips */
-.cabin-tabs button,
-.ribbon-items span,
-.amenity-pill:nth-child(3n),
-.amenity-pill:nth-child(4n),
-.nearby-list span {
-  color: #1b0f08;
-  font-weight: 800;
-}
-
-.cabin-tabs small {
-  color: rgba(27, 15, 8, 0.78);
-  opacity: 1;
-}
-
-/* Dark cards/sections need clean warm white */
-.hero-panel,
-.ribbon-lead,
 .cabin-info-card,
 .break-panel,
-.creek-section,
-.video-reel-bg,
+.creek-note,
 .wedding-card,
-.final-card,
-.policy-strip span,
-.site-footer {
-  color: #fff7e8;
+.final-card {
+  background-image:
+    linear-gradient(rgba(36, 21, 13, 0.76), rgba(13, 9, 6, 0.84)),
+    var(--wood-rustic);
+  background-size: cover, cover;
 }
 
-.hero-panel h1,
 .cabin-info-card h3,
-.break-panel h2,
-.creek-section h2,
-.creek-note strong,
-.video-reel-bg h2,
-.video-reel-bg strong,
-.wedding-card h2,
-.wedding-image-panel strong,
-.final-card h2,
-.site-footer strong {
-  color: #fff7e8;
-  text-shadow:
-    0 2px 0 rgba(0, 0, 0, 0.28),
-    0 10px 30px rgba(0, 0, 0, 0.42);
-}
-
-.hero-panel p,
 .cabin-info-card p,
+.break-panel h2,
 .break-panel p,
-.creek-section p,
-.creek-note span,
-.video-reel-bg p,
-.local-video p,
+.wedding-card h2,
 .wedding-card p,
-.final-card p,
-.site-footer p {
-  color: rgba(255, 247, 232, 0.92);
-  font-weight: 600;
+.final-card h2,
+.final-card p {
+  color: #fff7e8;
 }
 
-.hero-kicker,
-.ribbon-lead span,
 .cabin-info-card .eyebrow,
 .break-panel .eyebrow,
 .creek-section .eyebrow,
-.video-reel-bg .eyebrow,
-.local-video span,
 .wedding-card .eyebrow,
 .final-card .eyebrow,
-.contact-grid span {
+.reviews-section .eyebrow {
   color: #e8c77c;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.38);
 }
 
-/* Feature cards: make alternating cards readable */
-.feature-card {
+/* Image breaks: show the photo first */
+.image-break {
+  min-height: 70vh;
+  margin-top: 62px;
+  margin-bottom: 62px;
+}
+
+.image-break-overlay {
   background:
-    linear-gradient(rgba(255, 247, 232, 0.66), rgba(234, 213, 173, 0.58)),
-    var(--wood-white);
-  background-size: cover, cover;
+    linear-gradient(90deg, rgba(13, 9, 6, 0.68), rgba(13, 9, 6, 0.08), rgba(13, 9, 6, 0.34)),
+    linear-gradient(180deg, rgba(13, 9, 6, 0.06), rgba(13, 9, 6, 0.36));
 }
 
-.feature-card h3 {
-  color: #1b0f08;
-}
-
-.feature-card p {
-  color: #2b180d;
-}
-
-.feature-card:nth-child(even) {
+/* Creek section: dark but quieter */
+.creek-section {
   background:
-    linear-gradient(rgba(54, 31, 17, 0.78), rgba(13, 9, 6, 0.82)),
+    radial-gradient(circle at 12% 8%, rgba(232, 199, 124, 0.13), transparent 30rem),
+    linear-gradient(rgba(30, 17, 9, 0.84), rgba(13, 9, 6, 0.92)),
     var(--wood-rustic);
-  background-size: cover, cover;
+  background-size: auto, cover, cover;
 }
 
-.feature-card:nth-child(even) h3 {
+.creek-section h2,
+.creek-section p,
+.creek-note strong,
+.creek-note span {
   color: #fff7e8;
-  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.36);
 }
 
-.feature-card:nth-child(even) p {
-  color: rgba(255, 247, 232, 0.9);
+.creek-chip-grid span {
+  background: rgba(255, 247, 232, 0.1);
+  border-color: rgba(255, 247, 232, 0.2);
 }
 
-/* Photo/image overlay copy */
-.mosaic-card span,
-.mosaic-card p,
-.wedding-image-panel span,
-.wedding-image-panel strong {
-  text-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+/* Expanded gallery */
+.photo-mosaic-expanded {
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 270px;
+}
+
+.photo-mosaic-expanded .mosaic-card-1,
+.photo-mosaic-expanded .mosaic-card-6 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.mosaic-card span {
+  color: #fff7e8;
+  font-size: clamp(1.35rem, 2vw, 2.35rem);
+  line-height: 1.03;
 }
 
 .mosaic-card p {
   color: rgba(255, 247, 232, 0.92);
+  font-size: 0.94rem;
   font-weight: 600;
 }
 
-/* Amenities alternating chips */
+.mosaic-card::after {
+  background:
+    linear-gradient(180deg, transparent 32%, rgba(13, 9, 6, 0.86)),
+    radial-gradient(circle at 50% 18%, transparent, rgba(13, 9, 6, 0.12));
+}
+
+/* Reviews */
+.reviews-heading {
+  max-width: 780px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.reviews-heading h2,
+.reviews-heading p {
+  color: #fff7e8;
+  text-shadow: none;
+}
+
+.reviews-heading p {
+  color: rgba(255, 247, 232, 0.84);
+}
+
+.reviews-grid {
+  margin-top: 38px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.review-card {
+  height: 100%;
+  padding: 24px;
+  border-radius: var(--curve-b);
+  color: #fff7e8;
+  background: rgba(255, 247, 232, 0.08);
+  border: 1px solid rgba(255, 247, 232, 0.14);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.18);
+}
+
+.review-card p {
+  margin: 14px 0 18px;
+  color: rgba(255, 247, 232, 0.92);
+  font-size: 1rem;
+  line-height: 1.68;
+}
+
+.review-card strong,
+.review-card span,
+.review-stars {
+  display: block;
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.review-stars {
+  color: #e8c77c;
+  letter-spacing: 0.06em;
+  font-size: 0.9rem;
+}
+
+.review-card span {
+  margin: -6px 0 16px;
+  color: #e8c77c;
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.review-card strong {
+  color: #fff7e8;
+  font-size: 0.95rem;
+  font-weight: 900;
+}
+
+/* Amenity chips less noisy */
 .amenity-pill {
   color: #fff7e8;
-  font-weight: 800;
+  background:
+    linear-gradient(rgba(54, 31, 17, 0.76), rgba(23, 16, 11, 0.82)),
+    var(--wood-rustic);
+  background-size: cover, cover;
 }
 
 .amenity-pill:nth-child(3n),
 .amenity-pill:nth-child(4n) {
   color: #1b0f08;
+  background:
+    linear-gradient(rgba(255, 247, 232, 0.56), rgba(234, 213, 173, 0.52)),
+    var(--wood-white);
+  background-size: cover, cover;
 }
 
-/* Nearby alternating chips */
+.policy-strip span {
+  color: #fff7e8;
+}
+
+/* Nearby chips */
+.nearby-list span {
+  color: #1b0f08;
+  background:
+    linear-gradient(rgba(223, 189, 119, 0.46), rgba(169, 125, 54, 0.34)),
+    var(--wood-warm);
+  background-size: cover, cover;
+}
+
 .nearby-list span:nth-child(even) {
   color: #fff7e8;
-}
-
-/* Forms/contact cards */
-.contact-grid strong {
-  color: #fff7e8;
-  font-weight: 800;
-}
-
-.contact-grid a,
-.contact-grid div {
-  background: rgba(255, 247, 232, 0.1);
-}
-
-/* Keep active cabin tab readable */
-.cabin-tabs button:hover,
-.cabin-tabs button.active {
-  color: #120a06;
-}
-
-.cabin-tabs button:hover small,
-.cabin-tabs button.active small {
-  color: rgba(18, 10, 6, 0.8);
-}
-
-/* Image break cards */
-.image-break {
-  background-position: center;
-}
-
-.break-panel {
-  background-image:
-    linear-gradient(rgba(36, 21, 13, 0.78), rgba(13, 9, 6, 0.82)),
+  background:
+    linear-gradient(rgba(54, 31, 17, 0.72), rgba(23, 16, 11, 0.82)),
     var(--wood-rustic);
+  background-size: cover, cover;
 }
 
-/* Mobile: reduce wash boxes so it does not get cluttered */
+/* Final readability */
+.btn,
+.header-call,
+.booking-links a,
+.ribbon-items span,
+.amenity-pill,
+.nearby-list span,
+.review-card strong {
+  font-weight: 850;
+}
+
+@media (max-width: 980px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-grid,
+  .photo-mosaic-expanded {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .photo-mosaic-expanded .mosaic-card-1,
+  .photo-mosaic-expanded .mosaic-card-6 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
 @media (max-width: 640px) {
-  .intro-section .section-heading,
-  .cabins-section .section-heading,
-  .amenities-section .section-heading,
-  .nearby-section .section-heading,
-  .split-heading > p {
-    background: rgba(255, 247, 232, 0.28);
+  h2 {
+    font-size: clamp(2.25rem, 11vw, 3.6rem);
+  }
+
+  .hero-panel h1 {
+    font-size: clamp(3.9rem, 18vw, 6.2rem);
+  }
+
+  .reviews-grid,
+  .photo-mosaic-expanded {
+    grid-template-columns: 1fr;
+  }
+
+  .review-card {
+    border-radius: 24px;
   }
 }

@@ -1,4 +1,4 @@
-﻿import { navLinks, siteInfo } from "@/data/site";
+import { navLinks, siteInfo } from "@/data/site";
 
 export default function Footer() {
   return (
@@ -7,8 +7,8 @@ export default function Footer() {
         <div>
           <strong>{siteInfo.name}</strong>
           <p>
-            Collier, Liberty and Caddo cabins, wedding barn, clear Collier
-            Creek, and private 5 acres near Norman and Caddo Gap.
+            Three cabins, a wedding barn, and five private acres along clear
+            Collier Creek near Norman and Caddo Gap.
           </p>
         </div>
 

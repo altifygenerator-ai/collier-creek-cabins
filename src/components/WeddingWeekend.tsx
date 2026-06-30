@@ -1,4 +1,4 @@
-﻿import { images, siteInfo } from "@/data/site";
+import { images, siteInfo } from "@/data/site";
 import Reveal from "@/components/Reveal";
 
 export default function WeddingWeekend() {
@@ -9,18 +9,19 @@ export default function WeddingWeekend() {
       <div className="container wedding-card wedding-card-v2">
         <Reveal className="wedding-copy">
           <p className="eyebrow">Wedding barn & special events</p>
-          <h2>Host a wedding or special event on the majestic creek.</h2>
+          <h2>A rustic creekside place for wedding weekends and gatherings.</h2>
           <p>
-            Collier Creek Cabins hosts weddings and special events on beautiful
-            majestic creek and rolling hills scenery with trees. The property
-            includes the wedding event barn, clear Collier Creek, private
-            acreage, and all three cabins booked inclusive with weddings.
+            Collier Creek gives wedding guests a simple setup in one place: the
+            event barn, all three cabins, five private acres, and clear creek
+            scenery around the property. It feels relaxed, natural, and easy to
+            make your own.
           </p>
 
           <div className="wedding-flow">
-            <span>Book the cabins</span>
-            <span>Use the barn</span>
-            <span>Enjoy the creek</span>
+            <span>Event barn</span>
+            <span>Three cabins</span>
+            <span>Creekside photos</span>
+            <span>Outdoor space</span>
           </div>
 
           <div className="hero-actions">

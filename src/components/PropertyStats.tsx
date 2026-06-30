@@ -1,4 +1,4 @@
-﻿import { propertyStats, siteInfo } from "@/data/site";
+import { propertyStats, siteInfo } from "@/data/site";
 import Reveal from "@/components/Reveal";
 
 export default function PropertyStats() {
@@ -7,7 +7,7 @@ export default function PropertyStats() {
       <div className="container">
         <Reveal className="property-ribbon">
           <div className="ribbon-lead">
-            <span>Property highlights</span>
+            <span>At a glance</span>
             <strong>{siteInfo.highlightLine}</strong>
           </div>
 

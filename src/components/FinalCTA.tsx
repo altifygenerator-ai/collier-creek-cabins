@@ -1,4 +1,4 @@
-﻿import { cabins, siteInfo } from "@/data/site";
+import { cabins, siteInfo } from "@/data/site";
 import Reveal from "@/components/Reveal";
 
 export default function FinalCTA() {
@@ -8,12 +8,11 @@ export default function FinalCTA() {
     <section className="final-cta section-pad" id="contact">
       <div className="container">
         <Reveal className="final-card">
-          <p className="eyebrow">Contact Us</p>
-          <h2>Make a reservation at Collier Creek Cabins.</h2>
+          <p className="eyebrow">Plan your stay</p>
+          <h2>Ready to visit Collier Creek?</h2>
           <p>
-            Call with questions, use the Airbnb links to book Collier, Liberty,
-            or Caddo, or ask about weddings and special events at the wedding
-            barn.
+            Call with questions, ask about weddings and special events, or use
+            the cabin links below to book Collier, Liberty, or Caddo.
           </p>
 
           <div className="contact-grid">

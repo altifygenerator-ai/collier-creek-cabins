@@ -1,4 +1,4 @@
-﻿import { images, siteInfo } from "@/data/site";
+import { siteInfo } from "@/data/site";
 import Reveal from "@/components/Reveal";
 
 export default function Hero() {
@@ -6,51 +6,25 @@ export default function Hero() {
 
   return (
     <section className="hero hero-full">
-      <div className="hero-bg">
-        <img src={images.hero} alt="Collier Creek Cabins by the creek" />
-      </div>
-
+      <div className="hero-bg" />
       <div className="hero-overlay" />
 
       <div className="container hero-inner">
-        <div className="hero-empty" />
-
         <Reveal className="hero-panel">
-          <p className="hero-kicker">Creekside cabins & wedding barn</p>
-
-          <h1>Stay, gather, and celebrate beside clear Collier Creek.</h1>
-
-          <p className="hero-text">
-            Collier, Liberty and Caddo cabins sit on private acreage near Norman
-            and Caddo Gap, with clear cool creek water, wilderness to enjoy, and
-            a wedding barn for full weekend gatherings.
-          </p>
+          <p className="hero-kicker">{siteInfo.eyebrow}</p>
+          <h1>{siteInfo.heroTitle}</h1>
+          <p className="hero-text">{siteInfo.heroText}</p>
 
           <div className="hero-actions">
             <a href="#cabins" className="btn btn-primary">
-              Explore the Cabins
+              View Cabins
             </a>
-            <a href="#weddings" className="btn btn-secondary">
-              Wedding Barn
+            <a href="#reviews" className="btn btn-secondary">
+              Read Reviews
             </a>
             <a href={`tel:${tel}`} className="btn btn-ghost">
               Call {siteInfo.phone}
             </a>
-          </div>
-
-          <div className="hero-proof">
-            <div>
-              <span>Facebook</span>
-              <strong>100% recommend</strong>
-            </div>
-            <div>
-              <span>Reviews</span>
-              <strong>11 reviews</strong>
-            </div>
-            <div>
-              <span>Following</span>
-              <strong>1.5K followers</strong>
-            </div>
           </div>
         </Reveal>
       </div>

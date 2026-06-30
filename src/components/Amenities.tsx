@@ -1,4 +1,4 @@
-﻿import { amenities, siteInfo } from "@/data/site";
+import { amenities, siteInfo } from "@/data/site";
 import Reveal from "@/components/Reveal";
 
 export default function Amenities() {
@@ -7,13 +7,13 @@ export default function Amenities() {
       <div className="container">
         <Reveal className="section-heading split-heading">
           <div>
-            <p className="eyebrow">Cabin details</p>
-            <h2>Covered decks, full kitchens, picnic tables, grills, and creek views.</h2>
+            <p className="eyebrow">Cabin comforts</p>
+            <h2>Simple comforts for an easy cabin weekend.</h2>
           </div>
           <p>
-            The cabins have full individual bathrooms with showers, beautiful
-            covered decks looking at large and beautiful Collier Creek, personal
-            picnic tables, grills, and a fully plumbed outhouse to share.
+            The cabins are set up for real stays, with kitchen space, bathrooms,
+            covered decks, picnic tables, grills, and little extras that make it
+            easier to enjoy the creek instead of overpacking for the trip.
           </p>
         </Reveal>
 
@@ -27,9 +27,7 @@ export default function Amenities() {
 
         <Reveal className="policy-strip">
           <span>{siteInfo.minimumStay}</span>
-          <span>
-            Friendly dogs are welcome. Guests are responsible for any damages.
-          </span>
+          <span>Friendly dogs are welcome. Guests are responsible for any damages.</span>
         </Reveal>
       </div>
     </section>

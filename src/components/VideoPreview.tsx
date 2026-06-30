@@ -1,4 +1,4 @@
-﻿import { videos } from "@/data/site";
+import { videos } from "@/data/site";
 import Reveal from "@/components/Reveal";
 
 export default function VideoPreview() {
@@ -7,11 +7,11 @@ export default function VideoPreview() {
       <div className="video-reel-bg">
         <div className="container video-reel-inner">
           <Reveal className="video-reel-copy">
-            <p className="eyebrow">Videos</p>
-            <h2>Check out these videos around Collier Creek Cabins.</h2>
+            <p className="eyebrow">Property videos</p>
+            <h2>See the cabins, creek, and grounds before you visit.</h2>
             <p>
-              See the cabins, creek, wedding barn, and outdoor property before
-              you book your stay or ask about a special event.
+              A few simple videos give guests a better feel for the cabins, the
+              creek, the barn, and the outdoor space around Collier Creek.
             </p>
           </Reveal>
 

@@ -1,4 +1,4 @@
-﻿import { creekFeatures, images } from "@/data/site";
+import { creekFeatures, images } from "@/data/site";
 import Reveal from "@/components/Reveal";
 
 export default function CreekExperience() {
@@ -7,12 +7,12 @@ export default function CreekExperience() {
       <div className="container creek-grid">
         <Reveal className="creek-copy">
           <p className="eyebrow">Collier Creek</p>
-          <h2>Dip in a crystal clear creek to swim, snorkel or soak yourself.</h2>
+          <h2>Clear water, shade trees, and room to slow down.</h2>
           <p>
-            Beautiful hiking and exploring is right off the property. Catch
-            small mouth bass in Collier Creek, go snorkeling, and watch the fish
-            and plants under the huge slate rocks overhanging the banks into the
-            water.
+            Walk down to Collier Creek for swimming, snorkeling, soaking,
+            fishing, and exploring. Guests can enjoy the water, the slate rock
+            banks, the wooded setting, and the quiet outdoor space right off the
+            property.
           </p>
           <div className="creek-chip-grid">
             {creekFeatures.map((feature) => (
@@ -26,7 +26,7 @@ export default function CreekExperience() {
           <img className="creek-small" src={images.signs} alt="Collier Creek signs" />
           <div className="creek-note">
             <strong>Clear cool Collier Creek</strong>
-            <span>Swimming, snorkeling, soaking, fishing, hiking, and exploring.</span>
+            <span>Swim, soak, fish, explore, or just sit by the water.</span>
           </div>
         </Reveal>
       </div>

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -12,11 +12,11 @@ export default function CabinSelector() {
     <section className="cabins-section section-pad" id="cabins">
       <div className="container">
         <Reveal className="section-heading centered">
-          <p className="eyebrow">Rooms</p>
-          <h2>Choose between Collier, Liberty, and Caddo.</h2>
+          <p className="eyebrow">The cabins</p>
+          <h2>Pick the cabin that fits your stay.</h2>
           <p>
-            Each cabin has its own layout and feel, but all three keep guests
-            close to the creek, outdoor space, and wedding barn.
+            Each cabin has its own layout, but all three keep guests close to
+            Collier Creek, outdoor space, grills, porches, and the wedding barn.
           </p>
         </Reveal>
 
