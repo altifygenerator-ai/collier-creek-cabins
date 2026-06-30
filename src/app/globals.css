@@ -1944,3 +1944,252 @@ body {
     border-radius: 24px;
   }
 }
+
+/* =========================================================
+   FINAL CONTRAST PASS
+   Keeps the current look, fixes warm-wood/brown text clash.
+   ========================================================= */
+
+/* Light / warm wood sections need stronger ink */
+.intro-section,
+.cabins-section,
+.photo-mosaic-section,
+.wedding-section,
+.amenities-section,
+.nearby-section {
+  color: #1d1008;
+}
+
+.intro-section h2,
+.intro-section h3,
+.cabins-section h2,
+.cabins-section h3,
+.photo-mosaic-section h2,
+.photo-mosaic-section h3,
+.amenities-section h2,
+.amenities-section h3,
+.nearby-section h2,
+.nearby-section h3 {
+  color: #1b0f08;
+  text-shadow:
+    0 1px 0 rgba(255, 247, 232, 0.7),
+    0 12px 28px rgba(59, 33, 19, 0.12);
+}
+
+.intro-section p,
+.cabins-section p,
+.photo-mosaic-section p,
+.amenities-section p,
+.nearby-section p {
+  color: #29170c;
+  font-weight: 600;
+}
+
+/* Eyebrows on light wood need to be darker, not faded brass */
+.intro-section .eyebrow,
+.cabins-section .eyebrow,
+.photo-mosaic-section .eyebrow,
+.amenities-section .eyebrow,
+.nearby-section .eyebrow {
+  color: #4a2815;
+  text-shadow: 0 1px 0 rgba(255, 247, 232, 0.55);
+}
+
+/* Subtle wash behind loose heading/copy blocks only */
+.intro-section .section-heading,
+.cabins-section .section-heading,
+.amenities-section .section-heading,
+.nearby-section .section-heading {
+  background: rgba(255, 247, 232, 0.22);
+  border: 1px solid rgba(59, 33, 19, 0.08);
+  box-shadow: 0 18px 44px rgba(59, 33, 19, 0.08);
+}
+
+/* Split heading side copy needs contrast too */
+.split-heading > p {
+  color: #2b180d;
+  font-weight: 600;
+  background: rgba(255, 247, 232, 0.22);
+  border: 1px solid rgba(59, 33, 19, 0.08);
+  border-radius: 22px;
+  padding: 18px;
+}
+
+/* Light cards/chips */
+.cabin-tabs button,
+.ribbon-items span,
+.amenity-pill:nth-child(3n),
+.amenity-pill:nth-child(4n),
+.nearby-list span {
+  color: #1b0f08;
+  font-weight: 800;
+}
+
+.cabin-tabs small {
+  color: rgba(27, 15, 8, 0.78);
+  opacity: 1;
+}
+
+/* Dark cards/sections need clean warm white */
+.hero-panel,
+.ribbon-lead,
+.cabin-info-card,
+.break-panel,
+.creek-section,
+.video-reel-bg,
+.wedding-card,
+.final-card,
+.policy-strip span,
+.site-footer {
+  color: #fff7e8;
+}
+
+.hero-panel h1,
+.cabin-info-card h3,
+.break-panel h2,
+.creek-section h2,
+.creek-note strong,
+.video-reel-bg h2,
+.video-reel-bg strong,
+.wedding-card h2,
+.wedding-image-panel strong,
+.final-card h2,
+.site-footer strong {
+  color: #fff7e8;
+  text-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.28),
+    0 10px 30px rgba(0, 0, 0, 0.42);
+}
+
+.hero-panel p,
+.cabin-info-card p,
+.break-panel p,
+.creek-section p,
+.creek-note span,
+.video-reel-bg p,
+.local-video p,
+.wedding-card p,
+.final-card p,
+.site-footer p {
+  color: rgba(255, 247, 232, 0.92);
+  font-weight: 600;
+}
+
+.hero-kicker,
+.ribbon-lead span,
+.cabin-info-card .eyebrow,
+.break-panel .eyebrow,
+.creek-section .eyebrow,
+.video-reel-bg .eyebrow,
+.local-video span,
+.wedding-card .eyebrow,
+.final-card .eyebrow,
+.contact-grid span {
+  color: #e8c77c;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.38);
+}
+
+/* Feature cards: make alternating cards readable */
+.feature-card {
+  background:
+    linear-gradient(rgba(255, 247, 232, 0.66), rgba(234, 213, 173, 0.58)),
+    var(--wood-white);
+  background-size: cover, cover;
+}
+
+.feature-card h3 {
+  color: #1b0f08;
+}
+
+.feature-card p {
+  color: #2b180d;
+}
+
+.feature-card:nth-child(even) {
+  background:
+    linear-gradient(rgba(54, 31, 17, 0.78), rgba(13, 9, 6, 0.82)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+}
+
+.feature-card:nth-child(even) h3 {
+  color: #fff7e8;
+  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.36);
+}
+
+.feature-card:nth-child(even) p {
+  color: rgba(255, 247, 232, 0.9);
+}
+
+/* Photo/image overlay copy */
+.mosaic-card span,
+.mosaic-card p,
+.wedding-image-panel span,
+.wedding-image-panel strong {
+  text-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+}
+
+.mosaic-card p {
+  color: rgba(255, 247, 232, 0.92);
+  font-weight: 600;
+}
+
+/* Amenities alternating chips */
+.amenity-pill {
+  color: #fff7e8;
+  font-weight: 800;
+}
+
+.amenity-pill:nth-child(3n),
+.amenity-pill:nth-child(4n) {
+  color: #1b0f08;
+}
+
+/* Nearby alternating chips */
+.nearby-list span:nth-child(even) {
+  color: #fff7e8;
+}
+
+/* Forms/contact cards */
+.contact-grid strong {
+  color: #fff7e8;
+  font-weight: 800;
+}
+
+.contact-grid a,
+.contact-grid div {
+  background: rgba(255, 247, 232, 0.1);
+}
+
+/* Keep active cabin tab readable */
+.cabin-tabs button:hover,
+.cabin-tabs button.active {
+  color: #120a06;
+}
+
+.cabin-tabs button:hover small,
+.cabin-tabs button.active small {
+  color: rgba(18, 10, 6, 0.8);
+}
+
+/* Image break cards */
+.image-break {
+  background-position: center;
+}
+
+.break-panel {
+  background-image:
+    linear-gradient(rgba(36, 21, 13, 0.78), rgba(13, 9, 6, 0.82)),
+    var(--wood-rustic);
+}
+
+/* Mobile: reduce wash boxes so it does not get cluttered */
+@media (max-width: 640px) {
+  .intro-section .section-heading,
+  .cabins-section .section-heading,
+  .amenities-section .section-heading,
+  .nearby-section .section-heading,
+  .split-heading > p {
+    background: rgba(255, 247, 232, 0.28);
+  }
+}
