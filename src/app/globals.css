@@ -1,26 +1,1946 @@
-@import "tailwindcss";
+﻿:root {
+  --wood-white: url("/images/backgrounds/white-washed-wood.png");
+  --wood-rustic: url("/images/backgrounds/rustic-wood.png");
+  --wood-warm: url("/images/backgrounds/warm-wood.png");
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --black: #0d0906;
+  --char: #17100b;
+  --dark-brown: #24150d;
+  --walnut: #3b2113;
+  --bark: #4c2a17;
+  --cedar: #7f4828;
+  --cedar-light: #b87949;
+
+  --brass-dark: #765421;
+  --brass: #a97d36;
+  --brass-light: #d8b466;
+
+  --cream: #f6ebd2;
+  --paper: #fff7e8;
+  --old-paper: #ead5ad;
+  --whitewash: #f8f4ea;
+
+  --muted: #705f4e;
+  --border: rgba(36, 21, 13, 0.16);
+
+  --shadow-soft: 0 18px 42px rgba(13, 9, 6, 0.12);
+  --shadow-wood: 0 28px 78px rgba(13, 9, 6, 0.24);
+  --shadow-dark: 0 32px 96px rgba(0, 0, 0, 0.46);
+
+  --container: 1160px;
+  --curve-a: 34px 10px 34px 10px;
+  --curve-b: 10px 34px 10px 34px;
+  --curve-soft: 26px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: var(--char);
+  font-family: var(--font-body), system-ui, sans-serif;
+  background-color: #d7b27b;
+  background-image:
+    linear-gradient(rgba(246, 235, 210, 0.32), rgba(234, 213, 173, 0.42)),
+    var(--wood-warm);
+  background-size: cover, cover;
+  background-position: center, center;
+  background-attachment: fixed, fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 4%, rgba(255, 255, 255, 0.24), transparent 26rem),
+    radial-gradient(circle at 88% 10%, rgba(36, 21, 13, 0.15), transparent 30rem),
+    radial-gradient(circle at 50% 105%, rgba(36, 21, 13, 0.14), transparent 36rem);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.container {
+  width: min(var(--container), calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.section-pad {
+  padding: 104px 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-display), cursive;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(4.35rem, 8.8vw, 9.5rem);
+  line-height: 0.86;
+}
+
+h2 {
+  font-size: clamp(3.2rem, 6.3vw, 6.7rem);
+  line-height: 0.88;
+}
+
+h3 {
+  font-size: clamp(2.25rem, 4vw, 4.1rem);
+  line-height: 0.92;
+}
+
+p {
+  line-height: 1.72;
+}
+
+.eyebrow,
+.hero-kicker {
+  margin: 0 0 14px;
+  color: var(--brass-dark);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-weight: 800;
+}
+
+.btn {
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 22px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 800;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary,
+.header-call,
+.booking-links a {
+  color: var(--black);
+  background: linear-gradient(180deg, var(--brass-light), var(--brass));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.42),
+    0 16px 34px rgba(36, 21, 13, 0.24);
+}
+
+.btn-secondary {
+  color: var(--paper);
+  background: linear-gradient(135deg, var(--cedar-light), var(--cedar));
+}
+
+.btn-ghost,
+.btn-ghost.light {
+  color: var(--paper);
+  border-color: rgba(255, 247, 232, 0.34);
+  background: rgba(255, 247, 232, 0.08);
+}
+
+/* Header */
+
+.site-header {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  z-index: 60;
+  width: min(1180px, calc(100% - 32px));
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 12px;
+  transform: translateX(-50%);
+  color: var(--paper);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 247, 232, 0.2);
+  background-color: var(--char);
+  background-image:
+    linear-gradient(rgba(23, 16, 11, 0.78), rgba(23, 16, 11, 0.82)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+  background-position: center, center;
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-dark);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--black);
+  background: linear-gradient(180deg, var(--brass-light), var(--brass-dark));
+  font-family: var(--font-display), cursive;
+  font-size: 1.25rem;
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand strong {
+  line-height: 1;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 900;
+}
+
+.brand small {
+  margin-top: 3px;
+  color: rgba(255, 247, 232, 0.68);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(255, 247, 232, 0.08);
+}
+
+.desktop-nav a {
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: rgba(255, 247, 232, 0.76);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.desktop-nav a:hover {
+  color: var(--paper);
+  background: rgba(255, 247, 232, 0.1);
+}
+
+.header-call {
+  padding: 13px 18px;
+  border-radius: 999px;
+}
+
+/* Hero */
+
+.hero.hero-full {
+  position: relative;
+  min-height: 100vh;
+  padding: 0;
+  display: grid;
+  align-items: stretch;
+  overflow: hidden;
+  background: var(--char);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.08) contrast(1.08) sepia(0.04);
+  transform: scale(1.02);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(13, 9, 6, 0.04) 0%, rgba(13, 9, 6, 0.16) 42%, rgba(13, 9, 6, 0.78) 100%),
+    linear-gradient(180deg, rgba(13, 9, 6, 0.52) 0%, rgba(13, 9, 6, 0.08) 42%, rgba(13, 9, 6, 0.72) 100%);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(420px, 0.68fr);
+  gap: 44px;
+  align-items: center;
+  padding-top: 138px;
+  padding-bottom: 92px;
+}
+
+.hero-empty {
+  min-height: 420px;
+}
+
+.hero-panel {
+  position: relative;
+  padding: clamp(28px, 4vw, 54px);
+  color: var(--paper);
+  border-radius: var(--curve-a);
+  border: 1px solid rgba(255, 247, 232, 0.22);
+  background-color: var(--char);
+  background-image:
+    linear-gradient(rgba(36, 21, 13, 0.72), rgba(13, 9, 6, 0.74)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+  background-position: center, center;
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-dark);
+}
+
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  top: 18px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(223, 189, 119, 0.95), rgba(181, 118, 63, 0.75), transparent);
+}
+
+.hero-kicker {
+  color: var(--brass-light);
+}
+
+.hero-panel h1 {
+  max-width: 710px;
+  color: var(--paper);
+  line-height: 0.83;
+  text-shadow:
+    0 5px 24px rgba(0, 0, 0, 0.5),
+    0 1px 0 rgba(0, 0, 0, 0.45);
+}
+
+.hero-panel .hero-text {
+  max-width: 610px;
+  margin-top: 26px;
+  color: rgba(255, 247, 232, 0.82);
+  font-size: clamp(1.02rem, 1.45vw, 1.22rem);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.hero-proof {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 247, 232, 0.14);
+  background: rgba(13, 9, 6, 0.36);
+}
+
+.hero-proof div {
+  padding: 15px 18px;
+  border-right: 1px solid rgba(255, 247, 232, 0.1);
+}
+
+.hero-proof div:last-child {
+  border-right: 0;
+}
+
+.hero-proof span {
+  display: block;
+  margin-bottom: 6px;
+  color: rgba(255, 247, 232, 0.52);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+}
+
+.hero-proof strong {
+  display: block;
+  color: var(--paper);
+  line-height: 1.12;
+}
+
+/* Property ribbon */
+
+.property-ribbon-section {
+  position: relative;
+  z-index: 5;
+  margin-top: -36px;
+  padding-bottom: 54px;
+}
+
+.property-ribbon {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px;
+  border-radius: 26px;
+  border: 1px solid rgba(36, 21, 13, 0.16);
+  background-color: var(--old-paper);
+  background-image:
+    linear-gradient(rgba(255, 247, 232, 0.58), rgba(234, 213, 173, 0.64)),
+    var(--wood-white);
+  background-size: cover, cover;
+  background-position: center, center;
+  box-shadow: var(--shadow-wood);
+  backdrop-filter: blur(16px);
+}
+
+.ribbon-lead {
+  flex: 0 0 auto;
+  min-width: 280px;
+  padding: 16px 20px;
+  color: var(--paper);
+  border-radius: 18px;
+  background-color: var(--char);
+  background-image:
+    linear-gradient(rgba(36, 21, 13, 0.78), rgba(13, 9, 6, 0.82)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+  background-position: center, center;
+}
+
+.ribbon-lead span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--brass-light);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+}
+
+.ribbon-lead strong {
+  display: block;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.ribbon-items {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.ribbon-items span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: auto;
+  padding: 11px 12px;
+  border-radius: 999px;
+  color: var(--walnut);
+  background: rgba(59, 33, 19, 0.09);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+/* Section headings */
+
+.section-heading {
+  max-width: 760px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 1.04rem;
+}
+
+.section-heading.centered {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.split-heading {
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.55fr);
+  gap: 40px;
+  align-items: end;
+}
+
+.section-heading h2,
+.feature-card h3 {
+  color: var(--walnut);
+}
+
+/* Shared section backgrounds */
+
+.intro-section,
+.photo-mosaic-section,
+.cabins-section,
+.amenities-section,
+.nearby-section,
+.final-cta {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--cream);
+  background-image:
+    linear-gradient(rgba(255, 247, 232, 0.48), rgba(234, 213, 173, 0.58)),
+    var(--wood-white);
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat;
+}
+
+.video-reel-section,
+.wedding-section {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--old-paper);
+  background-image:
+    linear-gradient(rgba(234, 213, 173, 0.44), rgba(202, 161, 112, 0.5)),
+    var(--wood-warm);
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat;
+}
+
+.intro-section::after,
+.photo-mosaic-section::after,
+.cabins-section::after,
+.amenities-section::after,
+.nearby-section::after,
+.final-cta::after,
+.video-reel-section::after,
+.wedding-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.22), transparent 24rem),
+    radial-gradient(circle at 90% 10%, rgba(36, 21, 13, 0.11), transparent 30rem),
+    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(36,21,13,0.04));
+}
+
+.intro-section > .container,
+.photo-mosaic-section > .container,
+.cabins-section > .container,
+.amenities-section > .container,
+.nearby-section > .container,
+.final-cta > .container,
+.video-reel-section > .container,
+.wedding-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Intro */
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+  gap: 52px;
+  align-items: start;
+}
+
+.intro-card-grid {
+  display: grid;
+  gap: 0;
+}
+
+.feature-card {
+  padding: 26px 0 26px 34px;
+  border-left: 2px solid rgba(173, 132, 63, 0.7);
+  background: transparent;
+}
+
+.feature-card span {
+  display: none;
+}
+
+.feature-card p {
+  max-width: 560px;
+  color: var(--muted);
+}
+
+/* Photo mosaic */
+
+.photo-mosaic {
+  margin-top: 38px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.78fr 0.86fr;
+  grid-auto-rows: 315px;
+  gap: 18px;
+}
+
+.mosaic-card {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: var(--curve-a);
+  background: var(--char);
+  box-shadow: var(--shadow-wood);
+}
+
+.mosaic-card:nth-child(even) {
+  border-radius: var(--curve-b);
+}
+
+.mosaic-card-1 {
+  grid-row: span 2;
+}
+
+.mosaic-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 700ms ease;
+}
+
+.mosaic-card:hover img {
+  transform: scale(1.07);
+}
+
+.mosaic-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, transparent 34%, rgba(13, 9, 6, 0.84)),
+    radial-gradient(circle at 50% 20%, transparent, rgba(13, 9, 6, 0.14));
+}
+
+.mosaic-card div {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 20px;
+  z-index: 2;
+  color: var(--paper);
+}
+
+.mosaic-card span {
+  display: block;
+  font-family: var(--font-display), cursive;
+  font-size: clamp(2.1rem, 3.3vw, 3.7rem);
+  line-height: 0.9;
+}
+
+.mosaic-card p {
+  margin: 8px 0 0;
+  max-width: 430px;
+  color: rgba(255, 247, 232, 0.75);
+}
+
+/* Cabins */
+
+.cabin-tabs {
+  max-width: 940px;
+  margin: 34px auto 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+  padding: 7px;
+  border-radius: 20px;
+  border: 1px solid rgba(36, 21, 13, 0.14);
+  background-color: var(--cream);
+  background-image:
+    linear-gradient(rgba(255, 247, 232, 0.58), rgba(234, 213, 173, 0.64)),
+    var(--wood-white);
+  background-size: cover, cover;
+  background-position: center, center;
+  box-shadow: var(--shadow-soft);
+}
+
+.cabin-tabs button {
+  cursor: pointer;
+  text-align: left;
+  padding: 17px 20px;
+  border: 0;
+  border-radius: 14px;
+  color: var(--walnut);
+  background: transparent;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.cabin-tabs button:hover,
+.cabin-tabs button.active {
+  color: var(--char);
+  background: linear-gradient(180deg, var(--brass-light), var(--brass));
+}
+
+.cabin-tabs span,
+.cabin-tabs small {
+  display: block;
+}
+
+.cabin-tabs span {
+  font-weight: 800;
+}
+
+.cabin-tabs small {
+  margin-top: 4px;
+  opacity: 0.72;
+  font-weight: 700;
+}
+
+.cabin-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.7fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.cabin-collage {
+  position: relative;
+  min-height: 610px;
+}
+
+.cabin-main-img {
+  width: 82%;
+  height: 610px;
+  object-fit: cover;
+  border-radius: var(--curve-a);
+  box-shadow: var(--shadow-wood);
+}
+
+.cabin-small-img {
+  position: absolute;
+  right: 0;
+  bottom: 34px;
+  width: 42%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: var(--curve-b);
+  border: 10px solid var(--cream);
+  box-shadow: var(--shadow-wood);
+}
+
+.cabin-info-card {
+  padding: clamp(28px, 4vw, 48px);
+  border-radius: var(--curve-b);
+  color: var(--paper);
+  background-color: var(--char);
+  background-image:
+    linear-gradient(rgba(36, 21, 13, 0.78), rgba(13, 9, 6, 0.82)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+  background-position: center, center;
+  box-shadow: var(--shadow-wood);
+}
+
+.cabin-info-card .eyebrow {
+  color: var(--brass-light);
+}
+
+.cabin-info-card p {
+  color: rgba(255, 247, 232, 0.76);
+}
+
+.cabin-meta,
+.detail-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cabin-meta {
+  margin: 22px 0;
+}
+
+.detail-list {
+  margin: 24px 0 28px;
+}
+
+.cabin-meta span,
+.detail-list span {
+  padding: 10px 12px;
+  border-radius: 999px;
+  color: rgba(255, 247, 232, 0.92);
+  border: 1px solid rgba(255, 247, 232, 0.16);
+  background: rgba(255, 247, 232, 0.08);
+  font-weight: 700;
+}
+
+/* Image breaks */
+
+.image-break {
+  position: relative;
+  min-height: 68vh;
+  width: min(1360px, calc(100% - 36px));
+  margin: 46px auto;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  border-radius: var(--curve-a);
+  background: var(--char);
+  box-shadow: var(--shadow-wood);
+}
+
+.image-break-2 {
+  border-radius: var(--curve-b);
+}
+
+.image-break > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-break-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(13, 9, 6, 0.78), rgba(13, 9, 6, 0.14), rgba(13, 9, 6, 0.58)),
+    linear-gradient(180deg, rgba(13, 9, 6, 0.1), rgba(13, 9, 6, 0.62));
+}
+
+.image-break-content {
+  position: relative;
+  z-index: 2;
+}
+
+.break-panel {
+  max-width: 570px;
+  padding: clamp(28px, 4vw, 52px);
+  color: var(--paper);
+  border-radius: var(--curve-b);
+  border: 1px solid rgba(255, 247, 232, 0.22);
+  background-color: var(--char);
+  background-image:
+    linear-gradient(rgba(36, 21, 13, 0.74), rgba(13, 9, 6, 0.76)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+  background-position: center, center;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-dark);
+}
+
+.break-panel.right {
+  margin-left: auto;
+}
+
+.break-panel .eyebrow {
+  color: var(--brass-light);
+}
+
+.break-panel p {
+  color: rgba(255, 247, 232, 0.78);
+}
+
+/* Creek */
+
+.creek-section {
+  position: relative;
+  color: var(--paper);
+  background-color: var(--char);
+  background-image:
+    linear-gradient(rgba(36, 21, 13, 0.8), rgba(13, 9, 6, 0.84)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+  background-position: center, center;
+}
+
+.creek-section .eyebrow {
+  color: var(--brass-light);
+}
+
+.creek-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(360px, 0.8fr);
+  gap: 50px;
+  align-items: center;
+}
+
+.creek-copy p {
+  color: rgba(255, 247, 232, 0.76);
+  font-size: 1.05rem;
+}
+
+.creek-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.creek-chip-grid span {
+  padding: 12px 14px;
+  border-radius: 999px;
+  color: var(--paper);
+  border: 1px solid rgba(255, 247, 232, 0.16);
+  background: rgba(255, 247, 232, 0.08);
+  font-weight: 700;
+}
+
+.creek-photo-stack {
+  position: relative;
+  min-height: 590px;
+}
+
+.creek-photo-stack-v2 .creek-large {
+  width: 88%;
+  height: 560px;
+  object-fit: cover;
+  border-radius: var(--curve-b);
+  box-shadow: var(--shadow-dark);
+}
+
+.creek-photo-stack-v2 .creek-small {
+  position: absolute;
+  right: 0;
+  top: 54px;
+  width: 42%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: var(--curve-a);
+  border: 10px solid rgba(255, 247, 232, 0.12);
+  box-shadow: var(--shadow-dark);
+}
+
+.creek-note {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  padding: 22px;
+  border-radius: var(--curve-a);
+  border: 1px solid rgba(255, 247, 232, 0.18);
+  background-color: var(--char);
+  background-image:
+    linear-gradient(rgba(36, 21, 13, 0.74), rgba(13, 9, 6, 0.76)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+  background-position: center, center;
+  backdrop-filter: blur(12px);
+}
+
+.creek-note strong,
+.creek-note span {
+  display: block;
+}
+
+.creek-note strong {
+  font-family: var(--font-display), cursive;
+  font-size: clamp(2.25rem, 4vw, 4.4rem);
+  line-height: 0.9;
+}
+
+.creek-note span {
+  margin-top: 8px;
+  color: rgba(255, 247, 232, 0.72);
+}
+
+/* Local videos */
+
+.video-reel-section {
+  padding: 110px 0;
+}
+
+.video-reel-bg {
+  position: relative;
+  z-index: 1;
+  width: min(1420px, calc(100% - 32px));
+  margin: 0 auto;
+  overflow: hidden;
+  color: var(--paper);
+  border-radius: var(--curve-a);
+  background-color: var(--char);
+  background-image:
+    linear-gradient(rgba(36, 21, 13, 0.78), rgba(13, 9, 6, 0.82)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+  background-position: center, center;
+  box-shadow: var(--shadow-wood);
+}
+
+.video-reel-inner {
+  padding: clamp(34px, 6vw, 76px) 0;
+}
+
+.video-reel-copy {
+  max-width: 790px;
+  margin-bottom: 34px;
+}
+
+.video-reel-copy .eyebrow {
+  color: var(--brass-light);
+}
+
+.video-reel-copy p {
+  color: rgba(255, 247, 232, 0.72);
+}
+
+.video-reel-track {
+  display: grid;
+  grid-template-columns: 1.15fr 0.82fr 0.82fr;
+  gap: 18px;
+}
+
+.local-video video {
+  width: 100%;
+  height: 430px;
+  display: block;
+  object-fit: cover;
+  border-radius: var(--curve-b);
+  background: #000;
+  box-shadow: var(--shadow-dark);
+}
+
+.local-video-2 video,
+.local-video-3 video {
+  height: 330px;
+  border-radius: var(--curve-a);
+}
+
+.local-video div {
+  margin-top: 16px;
+}
+
+.local-video span {
+  display: block;
+  color: var(--brass-light);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+}
+
+.local-video strong {
+  display: block;
+  margin-top: 5px;
+  font-family: var(--font-display), cursive;
+  font-size: clamp(2.1rem, 3.5vw, 3.8rem);
+  line-height: 0.9;
+}
+
+.local-video p {
+  margin-bottom: 0;
+  color: rgba(255, 247, 232, 0.68);
+}
+
+/* Wedding */
+
+.wedding-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.75fr);
+  gap: 28px;
+  align-items: stretch;
+  padding: clamp(28px, 5vw, 58px);
+  overflow: hidden;
+  color: var(--paper);
+  border-radius: var(--curve-a);
+  background-color: var(--char);
+  background-image:
+    linear-gradient(rgba(36, 21, 13, 0.78), rgba(13, 9, 6, 0.82)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+  background-position: center, center;
+  box-shadow: var(--shadow-wood);
+}
+
+.wedding-copy {
+  max-width: 800px;
+}
+
+.wedding-copy .eyebrow {
+  color: var(--brass-light);
+}
+
+.wedding-copy p {
+  max-width: 720px;
+  color: rgba(255, 247, 232, 0.78);
+}
+
+.wedding-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 26px 0 0;
+}
+
+.wedding-flow span {
+  padding: 11px 13px;
+  border-radius: 999px;
+  color: var(--paper);
+  border: 1px solid rgba(255, 247, 232, 0.16);
+  background: rgba(255, 247, 232, 0.08);
+  font-weight: 700;
+}
+
+.wedding-image-panel {
+  position: relative;
+  min-height: 470px;
+  overflow: hidden;
+  border-radius: var(--curve-b);
+  border: 1px solid rgba(255, 247, 232, 0.18);
+  box-shadow: var(--shadow-dark);
+}
+
+.wedding-image-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wedding-image-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 36%, rgba(13, 9, 6, 0.86));
+}
+
+.wedding-image-panel div {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  z-index: 2;
+}
+
+.wedding-image-panel span {
+  display: block;
+  color: var(--brass-light);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+}
+
+.wedding-image-panel strong {
+  display: block;
+  margin-top: 10px;
+  color: var(--paper);
+  font-family: var(--font-display), cursive;
+  font-size: clamp(2.35rem, 4.4vw, 4.7rem);
+  line-height: 0.9;
+}
+
+/* Amenities / nearby / final */
+
+.amenities-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 34px;
+}
+
+.amenity-pill,
+.nearby-list span {
+  padding: 14px 16px;
+  border-radius: 999px;
+  color: var(--walnut);
+  background-color: var(--cream);
+  background-image:
+    linear-gradient(rgba(255, 247, 232, 0.58), rgba(234, 213, 173, 0.64)),
+    var(--wood-white);
+  background-size: cover, cover;
+  background-position: center, center;
+  border: 1px solid rgba(36, 21, 13, 0.12);
+  box-shadow: var(--shadow-soft);
+  font-weight: 700;
+}
+
+.policy-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.policy-strip span {
+  padding: 20px;
+  color: var(--paper);
+  border-radius: var(--curve-b);
+  background-color: var(--char);
+  background-image:
+    linear-gradient(rgba(36, 21, 13, 0.78), rgba(13, 9, 6, 0.82)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+  background-position: center, center;
+  font-weight: 700;
+}
+
+.nearby-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(360px, 0.9fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.nearby-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 12px;
+}
+
+.nearby-list span {
+  min-height: auto;
+  padding: 18px 20px;
+  font-weight: 800;
+}
+
+.final-cta {
+  padding-top: 80px;
+}
+
+.final-card {
+  position: relative;
+  z-index: 1;
+  padding: clamp(30px, 6vw, 70px);
+  color: var(--paper);
+  border-radius: var(--curve-a);
+  background-color: var(--char);
+  background-image:
+    linear-gradient(rgba(36, 21, 13, 0.78), rgba(13, 9, 6, 0.82)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+  background-position: center, center;
+  box-shadow: var(--shadow-wood);
+}
+
+.final-card .eyebrow {
+  color: var(--brass-light);
+}
+
+.final-card p {
+  max-width: 780px;
+  color: rgba(255, 247, 232, 0.76);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.contact-grid a,
+.contact-grid div {
+  min-height: 126px;
+  padding: 18px;
+  border-radius: var(--curve-b);
+  border: 1px solid rgba(255, 247, 232, 0.16);
+  background: rgba(255, 247, 232, 0.08);
+}
+
+.contact-grid span,
+.contact-grid strong {
+  display: block;
+}
+
+.contact-grid span {
+  color: var(--brass-light);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.contact-grid strong {
+  margin-top: 12px;
+  overflow-wrap: anywhere;
+  line-height: 1.2;
+}
+
+.booking-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+/* Footer */
+
+.site-footer {
+  padding: 42px 0;
+  color: rgba(255, 247, 232, 0.72);
+  background-color: var(--char);
+  background-image:
+    linear-gradient(rgba(13, 9, 6, 0.82), rgba(13, 9, 6, 0.86)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+  background-position: center, center;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(260px, 0.7fr);
+  gap: 30px;
+  align-items: start;
+}
+
+.site-footer strong {
+  color: var(--paper);
+  font-family: var(--font-display), cursive;
+  font-size: clamp(2rem, 3vw, 3.1rem);
+  line-height: 0.9;
+  font-weight: 400;
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.site-footer nav a {
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: rgba(255, 247, 232, 0.08);
+  font-weight: 700;
+}
+
+/* Responsive */
+
+@media (max-width: 980px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hero-inner,
+  .intro-grid,
+  .creek-grid,
+  .nearby-grid,
+  .split-heading,
+  .cabin-showcase,
+  .wedding-card,
+  .video-reel-track {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-empty {
+    display: none;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(180deg, rgba(13, 9, 6, 0.44), rgba(13, 9, 6, 0.76)),
+      radial-gradient(circle at 50% 35%, rgba(13, 9, 6, 0.04), rgba(13, 9, 6, 0.7));
+  }
+
+  .property-ribbon {
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 30px;
+  }
+
+  .ribbon-lead {
+    width: 100%;
+    border-radius: 24px;
+  }
+
+  .ribbon-items {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .cabin-tabs,
+  .contact-grid,
+  .policy-strip,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cabin-tabs {
+    border-radius: 28px;
+  }
+
+  .cabin-tabs button {
+    border-radius: 22px;
+  }
+
+  .cabin-main-img {
+    width: 100%;
+  }
+
+  .cabin-small-img {
+    width: 48%;
+  }
+
+  .local-video video,
+  .local-video-2 video,
+  .local-video-3 video {
+    height: 360px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(var(--container), calc(100% - 28px));
+  }
+
+  .section-pad {
+    padding: 72px 0;
+  }
+
+  h1 {
+    font-size: clamp(4rem, 18vw, 6.4rem);
+    line-height: 0.86;
+  }
+
+  h2 {
+    font-size: clamp(3.15rem, 14vw, 5rem);
+    line-height: 0.9;
+  }
+
+  h3 {
+    font-size: clamp(2.35rem, 11vw, 4rem);
+  }
+
+  .site-header {
+    border-radius: 26px;
+    align-items: stretch;
+  }
+
+  .brand small {
+    display: none;
+  }
+
+  .header-call {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .hero.hero-full {
+    min-height: 760px;
+  }
+
+  .hero-inner {
+    min-height: 760px;
+    padding-top: 110px;
+    padding-bottom: 76px;
+  }
+
+  .hero-panel {
+    padding: 24px;
+    border-radius: 28px;
+  }
+
+  .hero-actions,
+  .booking-links {
+    flex-direction: column;
+  }
+
+  .btn,
+  .booking-links a {
+    width: 100%;
+  }
+
+  .hero-proof {
+    grid-template-columns: 1fr;
+    border-radius: 24px;
+  }
+
+  .hero-proof div {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 247, 232, 0.1);
+  }
+
+  .hero-proof div:last-child {
+    border-bottom: 0;
+  }
+
+  .photo-mosaic {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 320px;
+  }
+
+  .mosaic-card-1 {
+    grid-row: span 1;
+  }
+
+  .image-break {
+    min-height: 610px;
+    width: min(100% - 26px, 1360px);
+    border-radius: 30px;
+  }
+
+  .break-panel,
+  .break-panel.right {
+    margin: 0;
+    border-radius: 26px;
+  }
+
+  .cabin-collage {
+    min-height: auto;
+  }
+
+  .cabin-main-img {
+    height: 420px;
+    width: 100%;
+    border-radius: 28px;
+  }
+
+  .cabin-small-img {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 82%;
+    height: 260px;
+    margin: -90px 0 0 auto;
+    border-radius: 24px;
+  }
+
+  .cabin-info-card,
+  .wedding-card,
+  .wedding-image-panel,
+  .final-card,
+  .mosaic-card,
+  .mosaic-card:nth-child(even),
+  .image-break-2,
+  .creek-photo-stack-v2 .creek-large {
+    border-radius: 28px;
+  }
+
+  .creek-photo-stack-v2 .creek-large {
+    width: 100%;
+    height: 430px;
+  }
+
+  .creek-photo-stack-v2 .creek-small {
+    display: none;
+  }
+
+  .contact-grid a,
+  .contact-grid div,
+  .policy-strip span {
+    border-radius: 24px;
+  }
+}
+
+/* =========================================================
+   COPY + READABILITY TIGHTENUP
+   ========================================================= */
+
+.section-heading h2,
+.feature-card h3,
+.cabin-tabs button,
+.ribbon-items span,
+.amenity-pill,
+.nearby-list span {
+  color: #2b160b;
+}
+
+.section-heading p,
+.feature-card p,
+.intro-section p,
+.cabins-section p,
+.amenities-section p,
+.nearby-section p,
+.photo-mosaic-section p {
+  color: #3f2818;
+  opacity: 1;
+}
+
+.hero-panel .hero-text,
+.break-panel p,
+.creek-copy p,
+.creek-note span,
+.video-reel-copy p,
+.local-video p,
+.wedding-copy p,
+.final-card p,
+.cabin-info-card p {
+  color: rgba(255, 247, 232, 0.9);
+}
+
+.hero-proof span {
+  color: rgba(255, 247, 232, 0.72);
+}
+
+.hero-proof strong {
+  color: #fff7e8;
+}
+
+.eyebrow {
+  color: #5a351c;
+}
+
+.hero-kicker,
+.break-panel .eyebrow,
+.creek-section .eyebrow,
+.video-reel-copy .eyebrow,
+.local-video span,
+.wedding-copy .eyebrow,
+.final-card .eyebrow,
+.cabin-info-card .eyebrow,
+.creek-note .eyebrow {
+  color: #e2bd72;
+}
+
+.ribbon-lead strong {
+  color: #fff7e8;
+}
+
+.ribbon-lead span {
+  color: #e2bd72;
+}
+
+.policy-strip span {
+  color: #fff7e8;
+}
+
+.mosaic-card p {
+  color: rgba(255, 247, 232, 0.88);
+}
+
+.mosaic-card span,
+.creek-note strong,
+.local-video strong,
+.wedding-image-panel strong,
+.site-footer strong {
+  color: #fff7e8;
+}
+
+.contact-grid span {
+  color: #e2bd72;
+}
+
+.contact-grid strong {
+  color: #fff7e8;
+}
+
+.site-footer,
+.site-footer p,
+.site-footer nav a {
+  color: rgba(255, 247, 232, 0.86);
+}
+
+/* =========================================================
+   SECTION RHYTHM / BACKGROUND TIGHTENUP
+   Keeps the wood theme but stops every section/card from
+   using the same white-washed texture.
+   ========================================================= */
+
+/* Main body background stays as the far background */
+body {
+  background-color: #d7b27b;
+  background-image:
+    linear-gradient(rgba(246, 235, 210, 0.22), rgba(234, 213, 173, 0.32)),
+    var(--wood-warm);
+  background-size: cover, cover;
+  background-position: center, center;
+  background-attachment: fixed, fixed;
+}
+
+/* Property ribbon: make it feel like a warm plank, not another white card */
+.property-ribbon {
+  background-color: #d7a96e;
+  background-image:
+    linear-gradient(rgba(255, 247, 232, 0.28), rgba(191, 132, 75, 0.28)),
+    var(--wood-warm);
+  background-size: cover, cover;
+  background-position: center, center;
+}
+
+.ribbon-items span {
+  color: #2b160b;
+  background: rgba(255, 247, 232, 0.34);
+  border: 1px solid rgba(59, 33, 19, 0.1);
+}
+
+/* Intro: use warm wood texture instead of white-wash */
+.intro-section {
+  background-color: #d6aa71;
+  background-image:
+    radial-gradient(circle at 12% 0%, rgba(255, 247, 232, 0.24), transparent 28rem),
+    linear-gradient(rgba(245, 221, 178, 0.34), rgba(188, 126, 69, 0.3)),
+    var(--wood-warm);
+  background-size: auto, cover, cover;
+  background-position: center, center, center;
+}
+
+.intro-section .section-heading {
+  padding: clamp(18px, 3vw, 30px);
+  border-radius: var(--curve-a);
+  background: rgba(255, 247, 232, 0.28);
+  border: 1px solid rgba(59, 33, 19, 0.1);
+  box-shadow: var(--shadow-soft);
+}
+
+.feature-card {
+  margin-bottom: 14px;
+  padding: 24px 26px;
+  border-left: 0;
+  border-radius: var(--curve-b);
+  background:
+    linear-gradient(rgba(255, 247, 232, 0.56), rgba(234, 213, 173, 0.48)),
+    var(--wood-white);
+  background-size: cover, cover;
+  border: 1px solid rgba(59, 33, 19, 0.12);
+  box-shadow: var(--shadow-soft);
+}
+
+.feature-card:nth-child(even) {
+  background:
+    linear-gradient(rgba(72, 42, 23, 0.74), rgba(23, 16, 11, 0.78)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+}
+
+.feature-card:nth-child(even) h3,
+.feature-card:nth-child(even) p {
+  color: #fff7e8;
+}
+
+/* Cabins: make this a clean solid section so the cabin photos breathe */
+.cabins-section {
+  background:
+    radial-gradient(circle at 15% 8%, rgba(255, 247, 232, 0.52), transparent 32rem),
+    radial-gradient(circle at 85% 15%, rgba(117, 74, 38, 0.13), transparent 30rem),
+    linear-gradient(180deg, #f2dfb9 0%, #e8c994 48%, #f3e2c0 100%);
+}
+
+.cabins-section .section-heading {
+  max-width: 700px;
+}
+
+.cabin-tabs {
+  background:
+    linear-gradient(rgba(224, 182, 116, 0.52), rgba(171, 112, 60, 0.38)),
+    var(--wood-warm);
+  background-size: cover, cover;
+  border-color: rgba(59, 33, 19, 0.18);
+}
+
+.cabin-tabs button {
+  background: rgba(255, 247, 232, 0.42);
+}
+
+.cabin-tabs button:hover,
+.cabin-tabs button.active {
+  background: linear-gradient(180deg, var(--brass-light), var(--brass));
+}
+
+/* Creek stays dark, but let the wood texture show more */
+.creek-section {
+  background-color: var(--char);
+  background-image:
+    radial-gradient(circle at 16% 18%, rgba(216, 180, 102, 0.12), transparent 30rem),
+    linear-gradient(rgba(36, 21, 13, 0.62), rgba(13, 9, 6, 0.78)),
+    var(--wood-rustic);
+  background-size: auto, cover, cover;
+  background-position: center, center, center;
+}
+
+.creek-chip-grid span {
+  background: rgba(255, 247, 232, 0.12);
+  border-color: rgba(255, 247, 232, 0.2);
+}
+
+/* Videos: solid dark brown stage instead of another full texture section */
+.video-reel-section {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(216, 180, 102, 0.16), transparent 32rem),
+    radial-gradient(circle at 80% 100%, rgba(122, 72, 36, 0.18), transparent 34rem),
+    linear-gradient(135deg, #2a170d 0%, #120a06 58%, #3b2113 100%);
+}
+
+.video-reel-bg {
+  background-image:
+    linear-gradient(rgba(36, 21, 13, 0.56), rgba(13, 9, 6, 0.68)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+  border: 1px solid rgba(255, 247, 232, 0.12);
+}
+
+/* Photo mosaic: use white-washed texture here only, because images sit on it well */
+.photo-mosaic-section {
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.2), transparent 24rem),
+    linear-gradient(rgba(255, 247, 232, 0.42), rgba(234, 213, 173, 0.5)),
+    var(--wood-white);
+  background-size: auto, cover, cover;
+}
+
+/* Wedding: standard warm solid background, dark wood card */
+.wedding-section {
+  background:
+    radial-gradient(circle at 80% 10%, rgba(91, 48, 24, 0.14), transparent 28rem),
+    radial-gradient(circle at 20% 100%, rgba(255, 247, 232, 0.32), transparent 32rem),
+    linear-gradient(180deg, #e5c28a 0%, #c99a62 52%, #ead4aa 100%);
+}
+
+.wedding-card {
+  background-image:
+    radial-gradient(circle at 90% 8%, rgba(223, 189, 119, 0.1), transparent 24rem),
+    linear-gradient(rgba(36, 21, 13, 0.64), rgba(13, 9, 6, 0.76)),
+    var(--wood-rustic);
+  background-size: auto, cover, cover;
+}
+
+/* Amenities: warm texture section, but pills are not white-wash anymore */
+.amenities-section {
+  background-color: #d7a96e;
+  background-image:
+    linear-gradient(rgba(241, 211, 160, 0.34), rgba(176, 113, 59, 0.28)),
+    var(--wood-warm);
+  background-size: cover, cover;
+}
+
+.amenity-pill {
+  color: #fff7e8;
+  background:
+    linear-gradient(rgba(54, 31, 17, 0.72), rgba(23, 16, 11, 0.76)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+  border-color: rgba(255, 247, 232, 0.13);
+}
+
+.amenity-pill:nth-child(3n),
+.amenity-pill:nth-child(4n) {
+  color: #2b160b;
+  background:
+    linear-gradient(rgba(255, 247, 232, 0.5), rgba(234, 213, 173, 0.48)),
+    var(--wood-white);
+  background-size: cover, cover;
+  border-color: rgba(59, 33, 19, 0.12);
+}
+
+/* Nearby: make this a clean solid paper/depth section */
+.nearby-section {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255, 247, 232, 0.54), transparent 30rem),
+    radial-gradient(circle at 80% 75%, rgba(91, 48, 24, 0.12), transparent 30rem),
+    linear-gradient(180deg, #f5e5c6 0%, #e8cb98 100%);
+}
+
+.nearby-list span {
+  color: #2b160b;
+  background:
+    linear-gradient(rgba(223, 189, 119, 0.46), rgba(169, 125, 54, 0.36)),
+    var(--wood-warm);
+  background-size: cover, cover;
+}
+
+.nearby-list span:nth-child(even) {
+  color: #fff7e8;
+  background:
+    linear-gradient(rgba(54, 31, 17, 0.7), rgba(23, 16, 11, 0.76)),
+    var(--wood-rustic);
+  background-size: cover, cover;
+}
+
+/* Final CTA: dark rich solid section, card still textured */
+.final-cta {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(223, 189, 119, 0.12), transparent 30rem),
+    radial-gradient(circle at 88% 90%, rgba(122, 72, 36, 0.18), transparent 30rem),
+    linear-gradient(135deg, #120a06 0%, #27160d 48%, #3b2113 100%);
+}
+
+.final-card {
+  border: 1px solid rgba(255, 247, 232, 0.14);
+}
+
+/* Keep all light-section text strong */
+.intro-section p,
+.cabins-section p,
+.photo-mosaic-section p,
+.amenities-section p,
+.nearby-section p {
+  color: #3a2415;
+}
+
+.section-heading h2,
+.feature-card h3 {
+  color: #2b160b;
+}
+
+/* Give light sections a little breathing depth */
+.intro-section,
+.cabins-section,
+.photo-mosaic-section,
+.wedding-section,
+.amenities-section,
+.nearby-section {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -42px 90px rgba(59, 33, 19, 0.08);
+}
+
+/* Tighten some oversized script in content-heavy sections */
+.intro-section h2,
+.cabins-section h2,
+.amenities-section h2,
+.nearby-section h2 {
+  max-width: 720px;
+}
+
+/* Better spacing between mixed backgrounds */
+.property-ribbon-section {
+  padding-bottom: 64px;
+}
+
+.image-break {
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+
+@media (max-width: 980px) {
+  .feature-card {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 640px) {
+  .intro-section .section-heading {
+    padding: 22px;
+  }
+
+  .feature-card {
+    border-radius: 24px;
+  }
 }
